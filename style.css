@@ -279,6 +279,22 @@ section.slider{
     background-color: rgba(2, 31, 6, 0.8);
 }
 
+/* indicadores */
+.indicadores {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .indicadores:hover {
+    background-color: #717171;
+  }
+
 /* Animação de esmaecimento (fade) */
 .fade {
     animation-name: fade;
