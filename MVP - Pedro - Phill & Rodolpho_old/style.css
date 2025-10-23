@@ -1,0 +1,296 @@
+/* --- Variáveis de Cor --- */
+:root {
+    --primary: #22300b;
+    --primary-hover: #76993d;
+    --secundary: #f3f3f3;
+
+    /* Cores de Status Adicionadas */
+    --status-green: #28a745;
+    --status-red: #dc3545;
+    --status-yellow: #ffc107;
+}
+
+/* --- Reset Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--secundary);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Layout Principal --- */
+header {
+    background-color: var(--primary);
+    color: var(--secundary);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* --- Seção de Alertas --- */
+.alertas {
+    background-color: #faf4bb;
+    border: 1px solid #ddd;
+    border-left: 5px solid var(--status-yellow);
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.alertas h2 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+/* --- Cards dos Parques --- */
+.parques-container h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.park-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    /* Para o border-radius funcionar */
+}
+
+.park-header {
+    background-color: #f9f9f9;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.park-header:hover {
+    background-color: #f1f1f1;
+}
+
+.park-header h3 {
+    color: var(--primary);
+}
+
+.trail-list {
+    list-style: none;
+    padding: 1rem 1.5rem;
+    /* Começa escondido por padrão */
+    display: none;
+}
+
+/* Classe 'open' que será ligada/desligada pelo JS */
+.trail-list.open {
+    display: block;
+}
+
+.trail-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.trail-list li:last-child {
+    border-bottom: none;
+}
+
+/* --- Estilos de Status --- */
+.status {
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.status-aberta {
+    background-color: var(--status-green);
+}
+
+.status-fechada {
+    background-color: var(--status-red);
+}
+
+.status-manutencao {
+    background-color: var(--status-yellow);
+    color: #333;
+}
+
+/* Contêiner da imagem com efeito de transição */
+.img-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Camada de transição que cobre a imagem */
+.img-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 9px;
+    width: 200px;
+    height: 300px;
+    background-color: var(--primary);
+    z-index: 1;
+    opacity: 0;
+    /* Inicialmente transparente */
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    box-sizing: border-box;
+    /* Inclui padding e borda no tamanho total */
+    border-radius: 20px;
+    /* Borda arredondada */
+}
+
+/* Efeito de transição ao passar o mouse */
+.img-container:hover::before {
+    transform: scaleX(1);
+    opacity: 1;
+    /* Torna a camada visível */
+}
+
+/* Texto sobreposto à imagem */
+.text-overlay {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    color: var(--secundary) !important;
+    z-index: 2;
+    opacity: 0;
+    /* Inicialmente transparente */
+    transition: opacity 0.5s ease;
+    /* Transição suave da opacidade */
+    text-shadow: 2px 2px 4px rgba(0, 83, 51, 0.7);
+    /* Sombra no texto */
+}
+
+/* Torna o texto visível ao passar o mouse */
+.img-container:hover .text-overlay {
+    opacity: 1;
+}
+
+/* Estilos da imagem dentro do contêiner */
+.img-container img {
+    display: block; /* Remove espaço extra abaixo da imagem */
+    width: 213px;
+    height: 300px;
+    max-width: 100%;
+    border: 1px solid #ccc; /* Borda ao redor da imagem */
+    border-radius: 25px; /* Borda arredondada */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+section.slider{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0 !important;
+    overflow: hidden; /* Garante que o conteúdo que vazar seja cortado */
+}
+
+/* Contêiner do slideshow */
+.slideshow-container {
+    width: 600%;
+    height: auto;
+    display: flex;
+}
+
+/* Esconde as imagens por padrão E define a proporção widescreen */
+.slide-box {
+    width: 25%;
+    height: auto;
+    position: relative; /* Adicionado: Define a base para o posicionamento da imagem */
+    text-align: center;
+}
+
+/* Adicionado: Estilos para a tag <img> dentro de .slide-box */
+.slide-box img {
+    width: 100vw; /* ocupa toda a largura da janela */
+    height: auto; /* altura total da tela */
+    object-fit: cover; /* preenche sem distorcer */
+    display: block; /*remove espaços indesejados*/
+}
+
+
+/* Botões de próximo e anterior */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    /* Adicionado: Garante que os botões fiquem acima da imagem cortada */
+    z-index: 10;
+}
+
+/* Posiciona o "botão próximo" à direita */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Ao passar o mouse (hover), adiciona uma cor de fundo preta com um pouco de transparência */
+.prev:hover,
+.next:hover {
+    background-color: rgba(2, 31, 6, 0.8);
+}
+
+/* Animação de esmaecimento (fade) */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
