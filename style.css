@@ -1,13 +1,17 @@
 /* --- Variáveis de Cor --- */
 :root {
     --primary: #22300b;
+    --primary-60: rgba(34, 48, 11, 0.637);
     --primary-hover: #76993d;
     --secundary: #f3f3f3;
 
-    /* Cores de Status Adicionadas */
+    /* Cores de Status */
     --status-green: #28a745;
     --status-red: #dc3545;
     --status-yellow: #ffc107;
+
+    /* Cores para textos*/
+    --text-black: #0d2721;
 }
 
 /* --- Reset Básico --- */
@@ -61,14 +65,14 @@ footer {
 
 .alertas h2 {
     font-size: 1.2rem;
-    color: var(--primary);
+    color: var(--text-black);
     margin-bottom: 0.5rem;
 }
 
 /* --- Cards dos Parques --- */
 .parques-container h2 {
     text-align: center;
-    color: var(--primary);
+    color: var(--text-black);
     margin-bottom: 1.5rem;
 }
 
@@ -90,11 +94,11 @@ footer {
 }
 
 .park-header:hover {
-    background-color: #f1f1f1;
+    background-color: var(--primary-hover);
 }
 
 .park-header h3 {
-    color: var(--primary);
+    color: var(--text-black);
 }
 
 .trail-list {
@@ -285,14 +289,14 @@ section.slider{
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: var(--primary-60);
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
   }
   
   .active, .indicadores:hover {
-    background-color: #717171;
+    background-color: rgba(2, 31, 6, 0.8);
   }
 
 /* Animação de esmaecimento (fade) */
