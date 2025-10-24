@@ -202,6 +202,8 @@ section.slider{
     width: 600%;
     height: auto;
     display: flex;
+    transition-duration: .6s;
+    transition-property: opacity;    
 }
 
 /* Esconde as imagens por padrão E define a proporção widescreen */
@@ -220,7 +222,6 @@ section.slider{
     display: block; /*remove espaços indesejados*/
 }
 
-
 /* Botões de próximo e anterior */
 .prev,
 .next {
@@ -238,6 +239,8 @@ section.slider{
     user-select: none;
     /* Adicionado: Garante que os botões fiquem acima da imagem cortada */
     z-index: 10;
+    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
 }
 
 /* Posiciona o "botão próximo" à direita */
