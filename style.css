@@ -1,6 +1,6 @@
 /* --- Variáveis de Cor --- */
 :root {
-    --primary: #22300b;
+    --primary: #012c18;
     --primary-60: rgba(34, 48, 11, 0.637);
     --primary-hover: #76993d;
     --secundary: #f3f3f3;
@@ -34,10 +34,19 @@ header {
     color: var(--secundary);
     padding: 2rem 1rem;
     text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 header h1 {
     margin-bottom: 0.5rem;
+}
+
+header .logo {
+    height: 110px; /* Defina a altura desejada para a logo */
+    width: auto;  /* Mantém a proporção da imagem */
+    margin-right: 1.5rem;  /*Alternativa ao 'gap' no header */
 }
 
 main {
