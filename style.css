@@ -157,62 +157,31 @@ footer {
     height: auto;
 }
 
-/* Camada de transição que cobre a imagem */
-.img-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 9px;
-    width: 200px;
-    height: 300px;
-    background-color: var(--primary);
-    z-index: 1;
-    opacity: 0;
-    /* Inicialmente transparente */
-    transform: scaleX(0);
-    transform-origin: 0 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    box-sizing: border-box;
-    /* Inclui padding e borda no tamanho total */
-    border-radius: 20px;
-    /* Borda arredondada */
-}
-
 /* Efeito de transição ao passar o mouse */
-.img-container:hover::before {
-    transform: scaleX(1);
-    opacity: 1;
-    /* Torna a camada visível */
+#phill:hover {
+    content: url("img/phill-hover.png");
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    filter: brightness(120%);
 }
 
-/* Texto sobreposto à imagem */
-.text-overlay {
-    position: absolute;
-    top: 40%;
-    left: 45%;
-    transform: translate(-50%, -50%);
-    color: var(--secundary) !important;
-    z-index: 2;
-    opacity: 0;
-    /* Inicialmente transparente */
-    transition: opacity 0.5s ease;
-    /* Transição suave da opacidade */
-    text-shadow: 2px 2px 4px rgba(0, 83, 51, 0.7);
-    /* Sombra no texto */
+#rodolpho:hover {
+    content: url("img/rodolpho-hover.png");
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    filter: brightness(120%);
 }
 
-/* Torna o texto visível ao passar o mouse */
-.img-container:hover .text-overlay {
-    opacity: 1;
+#pedro:hover {
+    content: url("img/pedro-hover.png");
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    filter: brightness(120%);
 }
 
 /* Estilos da imagem dentro do contêiner */
 .img-container img {
     display: block; /* Remove espaço extra abaixo da imagem */
-    width: 213px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     max-width: 100%;
-    border: 1px solid #ccc; /* Borda ao redor da imagem */
     border-radius: 25px; /* Borda arredondada */
 }
 
