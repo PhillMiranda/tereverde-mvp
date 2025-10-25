@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terê Verde Online - Guia de Parques</title>
+    <link rel="icon" href="img/Icone-TereVerde2.svg">
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -12,147 +13,163 @@
 <body>
 
     <header>
-        <img src="img/Logo-TereVerde.png" alt="Logo Terê Verde" class="logo">
+        <img src="img/Logo-TereVerde2.svg" alt="Logo Terê Verde" class="logo">
         <div class="row">
             <h1>Bem-vindo ao TerêVerde</h1>
             <!--<p>Seu guia atualizado para os parques, montanhas, cachoeiras e tudo de melhor que existe em Teresópolis</p>-->
             <p>Descubra trilhas, parques e aventuras em Teresópolis!</p>
         </div>
     </header>
+    <section>
+        <button class="tablink" onclick="openPage('PaginaInicial', this, '#293B14')" id="defaultOpen">Página inicial</button>
+        <button class="tablink" onclick="openPage('Parques', this, '#344D0E')">Parques</button>
+        <button class="tablink" onclick="openPage('Guias', this, '#4d7019')">Guias</button>
+        <button class="tablink" onclick="openPage('Sobre', this, '#76993D')">Sobre</button>
 
-    <section class="slider">
-        <div class="slideshow-container">
+        <div id="PaginaInicial" class="tabcontent">
+            <section class="slider">
+                <div class="slideshow-container">
 
-            <div class="slide-box fade">
-                <img src="img/MOZART_CARTÃO.png">
-            </div>
+                    <div class="slide-box fade">
+                        <img src="img/MOZART_CARTÃO.png">
+                    </div>
 
-            <div class="slide-box fade">
-                <img src="img/PEDRA_DO_SINO.png">
-            </div>
+                    <div class="slide-box fade">
+                        <img src="img/PEDRA_DO_SINO.png">
+                    </div>
 
-            <div class="slide-box fade">
-                <img src="img/PEDRA_DO_AÇU.png">
-            </div>
+                    <div class="slide-box fade">
+                        <img src="img/PEDRA_DO_AÇU.png">
+                    </div>
 
-            <div class="slide-box fade">
-                <img src="img/PARQUE_TRÊS_PICOS.png">
-            </div>
+                    <div class="slide-box fade">
+                        <img src="img/PARQUE_TRÊS_PICOS.png">
+                    </div>
 
-            <div class="slide-box fade">
-                <img src="img/PARQUE_MONTANHAS.png">
-            </div>
+                    <div class="slide-box fade">
+                        <img src="img/PARQUE_MONTANHAS.png">
+                    </div>
 
-            <div class="slide-box fade">
-                <img src="img/AGULHINHA DO BEIJA-FLOR.png">
-            </div>
+                    <div class="slide-box fade">
+                        <img src="img/AGULHINHA DO BEIJA-FLOR.png">
+                    </div>
 
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+            </section>
+            <section>
+                <br>
+                <div style="text-align:center">
+                    <span class="indicadores" onclick="currentSlide(1)"></span>
+                    <span class="indicadores" onclick="currentSlide(2)"></span>
+                    <span class="indicadores" onclick="currentSlide(3)"></span>
+                    <span class="indicadores" onclick="currentSlide(4)"></span>
+                    <span class="indicadores" onclick="currentSlide(5)"></span>
+                    <span class="indicadores" onclick="currentSlide(6)"></span>
+                </div><br>
+            </section>
+            <section class="alertas">
+                <h2>Alertas Importantes (Atualizado em 21/10/2025, 09:00)</h2>
+                <p style="color:var(--text-black);"><strong>Atenção:</strong> O Parque Nacional da Serra dos Órgãos está com visitação parcial devido às
+                    últimas chuvas. A Trilha do Sino está FECHADA.</p>
+            </section>
+        </div>
+
+        <div id="Parques" class="tabcontent">
+            <section class="parques-container">
+                <h2 style="color:var(--secundery);">Explore os Parques</h2>
+    
+                <article class="park-card">
+                    <div class="park-header">
+                        <h3>Parque Nacional da Serra dos Órgãos (PARNASO)</h3>
+                    </div>
+                    <ul class="trail-list" style="color:var(--text-black);">
+                        <li>
+                            <span>Trilha do Sino</span>
+                            <span class="status status-fechada">Fechada</span>
+                        </li>
+                        <li>
+                            <span>Trilha Cartão Postal</span>
+                            <span class="status status-aberta">Aberta</span>
+                        </li>
+                        <li>
+                            <span>Caminho das Orquídeas</span>
+                            <span class="status status-manutencao">Em Manutenção</span>
+                        </li>
+                    </ul>
+                </article>
+    
+                <article class="park-card">
+                    <div class="park-header">
+                        <h3>Parque Estadual dos Três Picos (PETP)</h3>
+                    </div>
+                    <ul class="trail-list" style="color:var(--text-black);">
+                        <li>
+                            <span>Trilha dos Três Picos</span>
+                            <span class="status status-aberta">Aberta</span>
+                        </li>
+                        <li>
+                            <span>Trilha da Caixa de Fósforos</span>
+                            <span class="status status-aberta">Aberta</span>
+                        </li>
+                    </ul>
+                </article>
+    
+                <article class="park-card">
+                    <div class="park-header">
+                        <h3>Parque Natural Municipal Montanhas de Teresópolis</h3>
+                    </div>
+                    <ul class="trail-list" style="color:var(--text-black);">
+                        <li>
+                            <span>Trilha da Pedra do Elefante</span>
+                            <span class="status status-aberta">Aberta</span>
+                        </li>
+                    </ul>
+                </article>
+    
+            </section>
+        </div>
+
+        <div id="Guias" class="tabcontent">
+            <h3>Parque estadual Três Picos</h3>
+            <p>Get in touch, or swing by for a cup of coffee.</p>
+        </div>
+
+        <div id="Sobre" class="tabcontent">
+            <section>
+                <h2 style="text-align: center;">
+                    Terê Verde é administrado por:
+                </h2><br>
+                <h5 style="text-align: center;">
+                    <div class="col-sm-30 clearfix" width="100%" height="100%">
+                        <div class="container mt-5">
+                            <div class="img-container">
+                                <img src="img/phill.png" width="100%" height="100%" role="presentation" id="phill">
+
+                            </div>
+                            <div class="img-container">
+                                <img src="img/rodolpho.png" width="100%" height="100%" role="presentation"
+                                    id="rodolpho">
+                            </div>
+                            <div class="img-container">
+                                <img src="img/pedro.png" width="100%" height="100%" role="presentation" id="pedro">
+                            </div>
+                        </div>
+                    </div>
+                </h5>
+            </section>
         </div>
     </section>
 
-    <main>
-        <section>
-            <br>
-            <div style="text-align:center">
-                <span class="indicadores" onclick="currentSlide(1)"></span>
-                <span class="indicadores" onclick="currentSlide(2)"></span>
-                <span class="indicadores" onclick="currentSlide(3)"></span>
-                <span class="indicadores" onclick="currentSlide(4)"></span>
-                <span class="indicadores" onclick="currentSlide(5)"></span>
-                <span class="indicadores" onclick="currentSlide(6)"></span>
-            </div>
-        </section>
-
-        <section class="alertas">
-            <h2>Alertas Importantes (Atualizado em 21/10/2025, 09:00)</h2>
-            <p><strong>Atenção:</strong> O Parque Nacional da Serra dos Órgãos está com visitação parcial devido às
-                últimas chuvas. A Trilha do Sino está FECHADA.</p>
-        </section>
-
-        <section class="parques-container">
-            <h2>Explore os Parques</h2>
-
-            <article class="park-card">
-                <div class="park-header">
-                    <h3>Parque Nacional da Serra dos Órgãos (PARNASO)</h3>
-                </div>
-                <ul class="trail-list">
-                    <li>
-                        <span>Trilha do Sino</span>
-                        <span class="status status-fechada">Fechada</span>
-                    </li>
-                    <li>
-                        <span>Trilha Cartão Postal</span>
-                        <span class="status status-aberta">Aberta</span>
-                    </li>
-                    <li>
-                        <span>Caminho das Orquídeas</span>
-                        <span class="status status-manutencao">Em Manutenção</span>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="park-card">
-                <div class="park-header">
-                    <h3>Parque Estadual dos Três Picos (PETP)</h3>
-                </div>
-                <ul class="trail-list">
-                    <li>
-                        <span>Trilha dos Três Picos</span>
-                        <span class="status status-aberta">Aberta</span>
-                    </li>
-                    <li>
-                        <span>Trilha da Caixa de Fósforos</span>
-                        <span class="status status-aberta">Aberta</span>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="park-card">
-                <div class="park-header">
-                    <h3>Parque Natural Municipal Montanhas de Teresópolis</h3>
-                </div>
-                <ul class="trail-list">
-                    <li>
-                        <span>Trilha da Pedra do Elefante</span>
-                        <span class="status status-aberta">Aberta</span>
-                    </li>
-                </ul>
-            </article>
-
-        </section>
-
-        <section>
-            <h2 style="text-align: center;">
-                Terê Verde é administrado por:
-            </h2><br>
-            <h5 style="text-align: center;">
-                <div class="col-sm-30 clearfix" width="100%" height="100%">
-                    <div class="container mt-5">
-                        <div class="img-container">
-                            <img src="img/phill.png" width="100%" height="100%" role="presentation" id="phill">
-
-                        </div>
-                        <div class="img-container">
-                            <img src="img/rodolpho.png" width="100%" height="100%" role="presentation" id="rodolpho">
-                        </div>
-                        <div class="img-container">
-                            <img src="img/pedro.png" width="100%" height="100%" role="presentation" id="pedro">
-                        </div>
-                    </div>
-                </div>
-            </h5>
-        </section>
-    </main>
-
-    <footer>
+    <footer class="row">
+        <img src="img/Icone-TereVerde2.svg" alt="Logo Terê Verde" class="logo">
         <p>Terê Verde Online © 2025 - Um projeto MVP</p>
     </footer>
 
     <script src="script.js"></script>
     <script src="animacaoBanner.js"></script>
+    <script src="colorirTela.js"></script>
 </body>
 
 </html>

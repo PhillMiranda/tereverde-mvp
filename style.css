@@ -2,7 +2,7 @@
 :root {
     --primary: #012c18;
     --primary-60: rgba(34, 48, 11, 0.637);
-    --primary-hover: #76993d;
+    --primary-hover: #87B344;
     --secundary: #f3f3f3;
 
     /* Cores de Status */
@@ -12,6 +12,13 @@
 
     /* Cores para textos*/
     --text-black: #0d2721;
+
+    /* Cores para botões */
+    --button-1: #22300B;
+    --button-2: #293B14;
+    --button-3: #344D0E;
+    --button-4: #4d7019;
+    --button-5: #76993D;
 }
 
 /* --- Reset Básico --- */
@@ -44,9 +51,12 @@ header h1 {
 }
 
 header .logo {
-    height: 110px; /* Defina a altura desejada para a logo */
-    width: auto;  /* Mantém a proporção da imagem */
-    margin-right: 1.5rem;  /*Alternativa ao 'gap' no header */
+    height: 110px;
+    /* Defina a altura desejada para a logo */
+    width: auto;
+    /* Mantém a proporção da imagem */
+    margin-right: 1.5rem;
+    /*Alternativa ao 'gap' no header */
 }
 
 main {
@@ -187,23 +197,26 @@ footer {
 
 /* Estilos da imagem dentro do contêiner */
 .img-container img {
-    display: block; /* Remove espaço extra abaixo da imagem */
+    display: block;
+    /* Remove espaço extra abaixo da imagem */
     width: 200px;
     height: 200px;
     max-width: 100%;
-    border-radius: 25px; /* Borda arredondada */
+    border-radius: 25px;
+    /* Borda arredondada */
 }
 
 * {
     box-sizing: border-box;
 }
 
-section.slider{
+section.slider {
     margin: 0 auto;
     width: 100%;
     height: auto;
     padding: 0 !important;
-    overflow: hidden; /* Garante que o conteúdo que vazar seja cortado */
+    overflow: hidden;
+    /* Garante que o conteúdo que vazar seja cortado */
 }
 
 /* Contêiner do slideshow */
@@ -212,23 +225,28 @@ section.slider{
     height: auto;
     display: flex;
     transition-duration: .6s;
-    transition-property: opacity;    
+    transition-property: opacity;
 }
 
 /* Esconde as imagens por padrão E define a proporção widescreen */
 .slide-box {
     width: 25%;
     height: auto;
-    position: relative; /* Adicionado: Define a base para o posicionamento da imagem */
+    position: relative;
+    /* Adicionado: Define a base para o posicionamento da imagem */
     text-align: center;
 }
 
 /* Adicionado: Estilos para a tag <img> dentro de .slide-box */
 .slide-box img {
-    width: 100vw; /* ocupa toda a largura da janela */
-    height: auto; /* altura total da tela */
-    object-fit: cover; /* preenche sem distorcer */
-    display: block; /*remove espaços indesejados*/
+    width: 100vw;
+    /* ocupa toda a largura da janela */
+    height: auto;
+    /* altura total da tela */
+    object-fit: cover;
+    /* preenche sem distorcer */
+    display: block;
+    /*remove espaços indesejados*/
 }
 
 /* Botões de próximo e anterior */
@@ -236,7 +254,7 @@ section.slider{
 .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 65%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
@@ -252,9 +270,10 @@ section.slider{
     transform: translate3d(0, 0, 0);
 }
 
+
 /* Posiciona o "botão próximo" à direita */
 .next {
-    right: 0;
+    right: 20px;
     border-radius: 3px 0 0 3px;
 }
 
@@ -274,11 +293,12 @@ section.slider{
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
-  }
-  
-  .active, .indicadores:hover {
+}
+
+.active,
+.indicadores:hover {
     background-color: rgba(2, 31, 6, 0.8);
-  }
+}
 
 /* Animação de esmaecimento (fade) */
 .fade {
@@ -294,4 +314,45 @@ section.slider{
     to {
         opacity: 1
     }
+}
+
+/* Style tab links */
+.tablink {
+    background-color: var(--button-1);
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+#PaginaInicial {
+    background-color: var(--button-2);
+}
+
+#Parques {
+    background-color: var(--button-3);
+}
+
+#Guias {
+    background-color: var(--button-4);
+}
+
+#Sobre {
+    background-color: var(--button-5);
 }
