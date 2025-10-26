@@ -104,6 +104,28 @@ footer {
     /* Para o border-radius funcionar */
 }
 
+/* Por padrão, tudo dentro do card está escondido */
+.park-card .trail-list,
+.park-card .park-slider {          /* .park-slider engloba o slider inteiro */
+    display: none;
+}
+
+/* Quando o card tem a classe .open, revelamos ambos */
+.park-card.open .trail-list,
+.park-card.open .park-slider {
+    display: block;
+}
+
+/* Se quiser um efeito de transição suave (opcional) */
+.park-card .trail-list,
+.park-card .park-slider {
+    transition: opacity .3s ease;
+}
+.park-card.open .trail-list,
+.park-card.open .park-slider {
+    opacity: 1;
+}
+
 .park-header {
     background-color: #f9f9f9;
     padding: 1rem 1.5rem;
@@ -118,6 +140,28 @@ footer {
 
 .park-header h3 {
     color: var(--text-black);
+}
+
+/* --- Estilos de Status --- */
+.status {
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.status-aberta {
+    background-color: var(--status-green);
+}
+
+.status-fechada {
+    background-color: var(--status-red);
+}
+
+.status-manutencao {
+    background-color: var(--status-yellow);
+    color: #333;
 }
 
 .trail-list {
@@ -144,26 +188,10 @@ footer {
     border-bottom: none;
 }
 
-/* --- Estilos de Status --- */
-.status {
-    font-weight: bold;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    color: #fff;
-}
-
-.status-aberta {
-    background-color: var(--status-green);
-}
-
-.status-fechada {
-    background-color: var(--status-red);
-}
-
-.status-manutencao {
-    background-color: var(--status-yellow);
-    color: #333;
+/* Garante que o span que contém o status fique à direita */
+.trail-list li .status {
+    margin-left: auto;
+    /* empurra o status para o fim da linha */
 }
 
 /* Contêiner da imagem com efeito de transição */
@@ -221,7 +249,7 @@ section.slider {
 
 /* Contêiner do slideshow */
 .slideshow-container {
-    width: 600%;
+    width: 100%;
     height: auto;
     display: flex;
     transition-duration: .6s;
@@ -229,24 +257,19 @@ section.slider {
 }
 
 /* Esconde as imagens por padrão E define a proporção widescreen */
-.slide-box {
+.banner-slide {
     width: 25%;
     height: auto;
-    position: relative;
-    /* Adicionado: Define a base para o posicionamento da imagem */
+    position: relative; 
     text-align: center;
 }
 
-/* Adicionado: Estilos para a tag <img> dentro de .slide-box */
-.slide-box img {
-    width: 100vw;
-    /* ocupa toda a largura da janela */
-    height: auto;
-    /* altura total da tela */
-    object-fit: cover;
-    /* preenche sem distorcer */
-    display: block;
-    /*remove espaços indesejados*/
+/* Adicionado: Estilos para a tag <img> dentro de .banner-slide */
+.banner-slide img {
+    width: 100vw; /* ocupa toda a largura da janela */
+    height: auto; /* altura total da tela */
+    object-fit: cover; /* preenche sem distorcer */
+    display: block;    /*remove espaços indesejados*/
 }
 
 /* Botões de próximo e anterior */
@@ -284,7 +307,7 @@ section.slider {
 }
 
 /* indicadores */
-.indicadores {
+.banner-indicadores {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -296,7 +319,7 @@ section.slider {
 }
 
 .active,
-.indicadores:hover {
+.banner-indicadores:hover {
     background-color: rgba(2, 31, 6, 0.8);
 }
 
@@ -355,4 +378,70 @@ section.slider {
 
 #Sobre {
     background-color: var(--button-5);
+}
+
+/* -------------------------------------------------
+   4.1. Container do slider dentro do card do parque
+   ------------------------------------------------- */
+.park-slider {
+    margin: 1rem 0;
+    overflow: hidden;
+    border-radius: 6px;
+    position: relative;
+    /* para que .prev/.next fiquem posicionados */
+}
+
+/* o container interno continua como antes */
+.park-slider .slideshow-container {
+    display: flex;
+    width: 100%;
+    /* não 600% – cada slide ocupa 100% do container */
+}
+
+/* Cada slide ocupa 100 % da largura do .park-slider */
+.park-slide {
+    flex: 0 0 50%;         /* fixa 100 % da largura, impede “quebra” */
+    position: relative;    /* Reserva o espaço antes da imagem carregar → evita salto */
+    aspect-ratio: 16 / 9;  /* ajuste se suas fotos tiverem outra proporção */
+}
+
+/* Imagem dentro do slide – preenche todo o espaço reservado */
+.park-slide img {
+    position: absolute;
+    inset: 0; /* top/right/bottom/left = 0 */
+    width: 100vw;
+    height: 50vw;
+    object-fit: cover; /* corta sem distorcer */
+    display: block;
+}
+
+/* Botões de navegação – mantêm o mesmo visual do banner, mas ficam acima do slide */
+.park-slider .prev,
+.park-slider .next {
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 12px;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, .4);
+    color: #fff;
+    border-radius: 3px;
+    z-index: 10;
+    /* garante que fiquem sobre a imagem */
+}
+
+/* Indicadores (pontos) – herdam o estilo já existente */
+.park-slider .park-indicador {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: var(--primary-60);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color .4s;
+}
+
+.park-slider .park-indicador.active,
+.park-slider .park-indicador:hover {
+    background-color: rgba(2, 31, 6, .8);
 }

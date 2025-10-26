@@ -24,9 +24,9 @@ function currentSlide(n) {
 // Função principal que exibe o slide correto
 function showSlides(n) {
   let i;
-  let slides = document.getElementsByClassName("slide-box");
+  let slides = document.getElementsByClassName("banner-slide");
   // Certifique-se que a classe dos indicadores está correta
-  let dots = document.getElementsByClassName("indicadores");
+  let dots = document.getElementsByClassName("banner-indicadores");
 
   // Lógica para voltar ao primeiro slide depois do último
   if (n > slides.length) { slideIndex = 1 }

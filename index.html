@@ -30,27 +30,27 @@
             <section class="slider">
                 <div class="slideshow-container">
 
-                    <div class="slide-box fade">
+                    <div class="banner-slide fade">
                         <img src="img/MOZART_CARTÃO.png">
                     </div>
 
-                    <div class="slide-box fade">
+                    <div class="banner-slide fade">
                         <img src="img/PEDRA_DO_SINO.png">
                     </div>
 
-                    <div class="slide-box fade">
+                    <div class="banner-slide fade">
                         <img src="img/PEDRA_DO_AÇU.png">
                     </div>
 
-                    <div class="slide-box fade">
+                    <div class="banner-slide fade">
                         <img src="img/PARQUE_TRÊS_PICOS.png">
                     </div>
 
-                    <div class="slide-box fade">
+                    <div class="banner-slide fade">
                         <img src="img/PARQUE_MONTANHAS.png">
                     </div>
 
-                    <div class="slide-box fade">
+                    <div class="banner-slide fade">
                         <img src="img/AGULHINHA DO BEIJA-FLOR.png">
                     </div>
 
@@ -61,17 +61,18 @@
             <section>
                 <br>
                 <div style="text-align:center">
-                    <span class="indicadores" onclick="currentSlide(1)"></span>
-                    <span class="indicadores" onclick="currentSlide(2)"></span>
-                    <span class="indicadores" onclick="currentSlide(3)"></span>
-                    <span class="indicadores" onclick="currentSlide(4)"></span>
-                    <span class="indicadores" onclick="currentSlide(5)"></span>
-                    <span class="indicadores" onclick="currentSlide(6)"></span>
+                    <span class="banner-indicadores" onclick="currentSlide(1)"></span>
+                    <span class="banner-indicadores" onclick="currentSlide(2)"></span>
+                    <span class="banner-indicadores" onclick="currentSlide(3)"></span>
+                    <span class="banner-indicadores" onclick="currentSlide(4)"></span>
+                    <span class="banner-indicadores" onclick="currentSlide(5)"></span>
+                    <span class="banner-indicadores" onclick="currentSlide(6)"></span>
                 </div><br>
             </section>
             <section class="alertas">
                 <h2>Alertas Importantes (Atualizado em 21/10/2025, 09:00)</h2>
-                <p style="color:var(--text-black);"><strong>Atenção:</strong> O Parque Nacional da Serra dos Órgãos está com visitação parcial devido às
+                <p style="color:var(--text-black);"><strong>Atenção:</strong> O Parque Nacional da Serra dos Órgãos está
+                    com visitação parcial devido às
                     últimas chuvas. A Trilha do Sino está FECHADA.</p>
             </section>
         </div>
@@ -79,11 +80,74 @@
         <div id="Parques" class="tabcontent">
             <section class="parques-container">
                 <h2 style="color:var(--secundery);">Explore os Parques</h2>
-    
-                <article class="park-card">
+
+                <!-- ==================== CARD DO PARQUE ==================== -->
+                <div class="park-card">
+
+                    <!-- cabeçalho (accordion) -->
                     <div class="park-header">
                         <h3>Parque Nacional da Serra dos Órgãos (PARNASO)</h3>
                     </div>
+                    <!-- ---------- SLIDER DO PARQUE ---------- -->
+                    <section class="park-slider" data-park="1">
+                        <div class="slideshow-container">
+
+                            <!-- slide 1 -->
+                            <div class="park-slide fade">
+                                <img src="img/PARNASO_1.jpg" alt="Mirante">
+                            </div>
+
+                            <!-- slide 2 -->
+                            <div class="park-slide fade">
+                                <img src="img/PARNASO_2.jpg" alt="Cachoeira">
+                            </div>
+
+                            <!-- slide 3 -->
+                            <div class="park-slide fade">
+                                <img src="img/PARNASO_3.jpg" alt="Trilha do Sino">
+                            </div>
+
+                            <!-- slide 4 -->
+                            <div class="park-slide fade">
+                                <img src="img/PARNASO_4.jpg" alt="Vista da Serra">
+                            </div>
+
+                            <!-- slide 4 -->
+                            <div class="park-slide fade">
+                                <img src="img/PARNASO_5.jpg" alt="Vista da Serra">
+                            </div>
+
+                            <!-- botões de navegação -->
+                            <a class="prev" onclick="parkPlusSlides(1, -1)">&#10094;</a>
+                            <a class="next" onclick="parkPlusSlides(1, 1)">&#10095;</a>
+                        </div>
+
+                        <!-- indicadores (pontos) -->
+                        <div style="text-align:center;margin-top:8px;">
+                            <span class="park-indicador" onclick="parkCurrentSlide(1,1)"></span>
+                            <span class="park-indicador" onclick="parkCurrentSlide(1,2)"></span>
+                            <span class="park-indicador" onclick="parkCurrentSlide(1,3)"></span>
+                            <span class="park-indicador" onclick="parkCurrentSlide(1,4)"></span>
+                            <span class="park-indicador" onclick="parkCurrentSlide(1,5)"></span>
+                        </div>
+                    </section>
+
+                    <!-- descrição opcional -->
+                    <div class="col trail-list" style="color:var(--text-black); text-indent: 20px;"">
+                        <p>O Parque Nacional da Serra dos Órgos <strong>(PARNASO)</strong> é uma unidade de conservação de 19.855 hectares localizada na Região Serrana do Rio de Janeiro (abrangendo Teresópolis, Petrópolis, Magé e Guapimirim).</p>
+                        <br><p>Os aspectos mais relevantes são:</p>                            
+                        <div style="text-indent: 50px;">
+                            <p><strong>Importância Histórica:</strong> Criado em 1939, é o terceiro parque nacional mais antigo do Brasil.</p>                            
+                            <p><strong>Atrações e Esportes:</strong> É considerado um dos melhores locais do país para esportes de montanha (escalada, caminhada, rapel) e possui cachoeiras.</p>                            
+                            <p><strong>Rede de Trilhas:</strong> Possui a maior rede de trilhas do Brasil, com mais de 200 km em todos os níveis de dificuldade, incluindo desde trilhas acessíveis a cadeirantes até a famosa Travessia Petrópolis-Teresópolis (30 km).</p>                            
+                            <p><strong>Marcos da Escalada:</strong> Abriga picos icônicos como o Dedo de Deus, considerado o marco inicial da escalada no país, e a Agulha do Diabo.</p>                            
+                            <p><strong>Biodiversidade e Conservação:</strong> O parque abrange uma vasta biodiversidade com mais de 2.800 espécies de plantas, centenas de espécies de animais, incluindo 130 animais ameaçados de extinção e muitas espécies endêmicas (que só existem ali).</p>                            
+                            <p><strong>Administração:</strong> É administrado pelo Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio).</p>
+                        </div>
+                        </p>
+                    </div><br>
+
+                    <!-- ---------- LISTA DE TRILHAS ---------- -->
                     <ul class="trail-list" style="color:var(--text-black);">
                         <li>
                             <span>Trilha do Sino</span>
@@ -95,11 +159,12 @@
                         </li>
                         <li>
                             <span>Caminho das Orquídeas</span>
-                            <span class="status status-manutencao">Em Manutenção</span>
+                            <span class="status status-manutencao">Manutenção</span>
                         </li>
                     </ul>
-                </article>
-    
+                </div>
+
+
                 <article class="park-card">
                     <div class="park-header">
                         <h3>Parque Estadual dos Três Picos (PETP)</h3>
@@ -115,7 +180,7 @@
                         </li>
                     </ul>
                 </article>
-    
+
                 <article class="park-card">
                     <div class="park-header">
                         <h3>Parque Natural Municipal Montanhas de Teresópolis</h3>
@@ -127,7 +192,7 @@
                         </li>
                     </ul>
                 </article>
-    
+
             </section>
         </div>
 
@@ -162,14 +227,16 @@
         </div>
     </section>
 
-    <footer class="row">
-        <img src="img/Icone-TereVerde2.svg" alt="Logo Terê Verde" class="logo">
+    <footer>
+        <img src="img/Icone-TereVerde2.svg" alt="Logo Terê Verde" class="logo" width="10%" height="10%">
         <p>Terê Verde Online © 2025 - Um projeto MVP</p>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="animacaoBanner.js"></script>
-    <script src="colorirTela.js"></script>
+    <script src="colorirTela.js"></script> <!-- abas -->
+    <script src="script.js"></script> <!-- accordion das trilhas -->
+    <script src="animacaoBanner.js"></script> <!-- banner (único) -->
+    <script src="parqueSlider.js"></script> <!-- sliders dos parques -->
+
 </body>
 
 </html>
