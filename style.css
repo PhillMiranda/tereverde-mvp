@@ -445,3 +445,71 @@ section.slider {
 .park-slider .park-indicador:hover {
     background-color: rgba(2, 31, 6, .8);
 }
+
+/* === CSS para clima === */
+.area-previsao-do-tempo {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+    font-family: Arial, sans-serif;
+  }
+
+  .previsao-barra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .previsao-barra:hover {
+    transform: scale(1.02);
+  }
+
+  .previsao-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .previsao-barra__frame--info__temperature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .previsao-barra__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .previsao-barra__frame--info__temperature--value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0031FF;
+  }
+
+  .previsao-barra__frame--info__temperature--value-min {
+    color: #666;
+    margin-left: 4px;
+  }
+
+  .previsao-barra__frame--info__temperature--desc {
+    font-size: 1rem;
+    color: #444;
+    text-transform: capitalize;
+  }
+
+  .weather-icon {
+    width: 64px;
+    height: 64px;
+  }
