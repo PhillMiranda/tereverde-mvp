@@ -1,8 +1,10 @@
 // URL do seu endpoint proxy hospedado na Vercel
 const url = "https://tereverde-mvp.vercel.app/api/clima?city=Teresopolis,BR";
+const cor = "style.css";
 
 // Variável global para status de trilha
 let trilhaStatus = "aberta";
+let corStatus = "#27ae60";
 
 fetch(url)
     .then(response => response.json())
@@ -22,27 +24,28 @@ fetch(url)
         // Define status da trilha conforme condição
         if (condicao.includes("rain") || condicao.includes("storm") || condicao.includes("drizzle")) {
             trilhaStatus = "fechada";
+            corStatus.style.backgroundColor = "#c0392b";
         } else if (condicao.includes("snow")) {
             trilhaStatus = "parcial";
+            corStatus.style.backgroundColor = "#f1c40f";
         } else {
             trilhaStatus = "aberta";
+            corStatus.style.backgroundColor = "#27ae60";
         }
 
         // Exemplo: exibir no console ou usar no site
         console.log(`Status da trilha: ${trilhaStatus}`);
         const textoTrilha = document.getElementById("textoTrilha");
+        const corStatus = document.getElementsByClassName(".status-trilha")
 
         if (trilhaStatus === "fechada") {
             textoTrilha.textContent = "Trilha Fechada devido às condições climáticas";
-            textoTrilha.style.backgroundColor = "#c0392b";
             textoTrilha.style.color = "#ffffff";
         } else if (trilhaStatus === "parcial") {
             textoTrilha.textContent = "Trilha Parcialmente Acessível";
-            textoTrilha.style.backgroundColor = "#f1c40f";
             textoTrilha.style.color = "#000000";
         } else {
             textoTrilha.textContent = "Trilha Aberta para visitação";
-            textoTrilha.style.backgroundColor = "#27ae60";
             textoTrilha.style.color = "#ffffff";
         }
     })

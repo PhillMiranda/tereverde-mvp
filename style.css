@@ -164,6 +164,17 @@ footer {
     color: #333;
 }
 
+.status-trilha {
+    margin: 10px 36px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    /*background: #fff;*/
+    padding: 10px 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: inline-block;
+  }
+
 .trail-list {
     list-style: none;
     padding: 1rem 1.5rem;
@@ -520,17 +531,6 @@ section.slider {
     font-size: 0.9rem;
     color: #444;
     text-transform: capitalize;
-  }
-
-  .status-trilha {
-    margin: 10px 36px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    background: #fff;
-    padding: 10px 15px;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: inline-block;
   }
   
   /* Responsividade */
