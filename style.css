@@ -447,12 +447,11 @@ section.slider {
 }
 
 /* === CSS para clima === */
-/* === Estilo atualizado da previsão === */
 .area-previsao-do-tempo {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: #f5f5f5;
-    padding: 8px 0;
+    padding: 8px 36px;
   }
   
   .previsao-barra {
@@ -463,8 +462,8 @@ section.slider {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: fit-content;
     transition: transform 0.3s ease;
+    max-width: 100%;
   }
   
   .previsao-barra:hover {
@@ -495,9 +494,9 @@ section.slider {
   }
   
   .temp-max {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
-    color: #0031ff;
+    color: var(--primary);
   }
   
   .temp-min {
@@ -514,11 +513,49 @@ section.slider {
   
   .cidade {
     font-size: 1rem;
-    color: #0031ff;
+    color: var(--primary);
   }
   
   .descricao {
     font-size: 0.9rem;
     color: #444;
     text-transform: capitalize;
-  }  
+  }
+
+  .status-trilha {
+    margin: 10px 36px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: inline-block;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .area-previsao-do-tempo {
+      justify-content: center;
+      padding: 8px 10px;
+    }
+  
+    .previsao-barra {
+      width: 100%;
+      max-width: 95%;
+      padding: 10px;
+    }
+  
+    .previsao-container {
+      gap: 10px;
+    }
+  
+    .weather-icon {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .temp-max {
+      font-size: 1.3rem;
+    }
+  }
