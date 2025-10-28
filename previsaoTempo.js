@@ -34,13 +34,16 @@ fetch(url)
 
         if (trilhaStatus === "fechada") {
             textoTrilha.textContent = "Trilha Fechada devido às condições climáticas";
-            textoTrilha.style.color = "#c0392b";
+            textoTrilha.style.backgroundColor = "#c0392b";
+            textoTrilha.style.color = "#ffffff";
         } else if (trilhaStatus === "parcial") {
             textoTrilha.textContent = "Trilha Parcialmente Acessível";
-            textoTrilha.style.color = "#f1c40f";
+            textoTrilha.style.backgroundColor = "#f1c40f";
+            textoTrilha.style.color = "#000000";
         } else {
             textoTrilha.textContent = "Trilha Aberta para visitação";
-            textoTrilha.style.color = "#27ae60";
+            textoTrilha.style.backgroundColor = "#27ae60";
+            textoTrilha.style.color = "#ffffff";
         }
     })
     .catch(error => {
