@@ -1,6 +1,6 @@
 const apiKey = "67a3a6c808d38b9776064da4cda09100";
     const city = "Teresopolis,BR";
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=pt_br`;
+    const url = `https://tereverde-mvp.vercel.app/api/clima?city=Teresopolis,BR`;
 
     fetch(url)
       .then(response => response.json())
