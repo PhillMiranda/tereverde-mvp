@@ -23,30 +23,31 @@ fetch(url)
 
         // Define status da trilha conforme condição
         if (condicao.includes("rain") || condicao.includes("storm") || condicao.includes("drizzle")) {
-            trilhaStatus = "fechada";
-            corStatus.style.backgroundColor = "#c0392b";
+            trilhaStatus = "fechada";            
         } else if (condicao.includes("snow")) {
-            trilhaStatus = "parcial";
-            corStatus.style.backgroundColor = "#f1c40f";
+            trilhaStatus = "parcial";            
         } else {
             trilhaStatus = "aberta";
-            corStatus.style.backgroundColor = "#27ae60";
+            
         }
 
         // Exemplo: exibir no console ou usar no site
         console.log(`Status da trilha: ${trilhaStatus}`);
         const textoTrilha = document.getElementById("textoTrilha");
-        const corStatus = document.getElementsByClassName(".status-trilha")
+        const corStatus = document.getElementsByClassName(".status-trilha");
 
         if (trilhaStatus === "fechada") {
             textoTrilha.textContent = "Trilha Fechada devido às condições climáticas";
             textoTrilha.style.color = "#ffffff";
+            corStatus.style.backgroundColor = "#c0392b";
         } else if (trilhaStatus === "parcial") {
             textoTrilha.textContent = "Trilha Parcialmente Acessível";
             textoTrilha.style.color = "#000000";
+            corStatus.style.backgroundColor = "#f1c40f";
         } else {
             textoTrilha.textContent = "Trilha Aberta para visitação";
             textoTrilha.style.color = "#ffffff";
+            corStatus.style.backgroundColor = "#27ae60";
         }
     })
     .catch(error => {
