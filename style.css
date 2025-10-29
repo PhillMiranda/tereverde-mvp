@@ -594,22 +594,6 @@ section.slider {
         width: 50%; /* Faz com que ocupem duas colunas */
     }
 
-    /* Garante que o slider ocupe a largura total */
-     .park-slide img {
-        width: 100%;
-        height: auto; /* Mantém proporção */
-    }
-
-    .park-slide {
-        flex: 0 0 100%; /* Slide ocupa 100% da largura em telas menores */
-        aspect-ratio: auto; /* Remove aspect-ratio fixo se necessário */
-    }
-
-    .banner-slide img {
-         width: 100%; /* Garante que imagem do banner principal ocupe 100% */
-         height: auto;
-    }
-
     .area-previsao-do-tempo {
         justify-content: center;
         padding: 8px 10px;
