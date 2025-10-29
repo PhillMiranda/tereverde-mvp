@@ -106,7 +106,8 @@ footer {
 
 /* Por padrão, tudo dentro do card está escondido */
 .park-card .trail-list,
-.park-card .park-slider {          /* .park-slider engloba o slider inteiro */
+.park-card .park-slider {
+    /* .park-slider engloba o slider inteiro */
     display: none;
 }
 
@@ -121,6 +122,7 @@ footer {
 .park-card .park-slider {
     transition: opacity .3s ease;
 }
+
 .park-card.open .trail-list,
 .park-card.open .park-slider {
     opacity: 1;
@@ -171,9 +173,28 @@ footer {
     background-color: #fff;
     padding: 10px 15px;
     border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: inline-block;
-  }
+}
+
+.horario-trilha {
+    margin: 15px 36px;
+    padding: 12px 18px;
+    border-left: 6px solid var(--primary, #4CAF50);
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.horario-trilha p {
+    margin: 4px 0;
+    color: #333;
+}
+
+.horario-trilha p strong {
+    color: var(--primary);
+}
 
 .trail-list {
     list-style: none;
@@ -271,16 +292,20 @@ section.slider {
 .banner-slide {
     width: 25%;
     height: auto;
-    position: relative; 
+    position: relative;
     text-align: center;
 }
 
 /* Adicionado: Estilos para a tag <img> dentro de .banner-slide */
 .banner-slide img {
-    width: 100vw; /* ocupa toda a largura da janela */
-    height: auto; /* altura total da tela */
-    object-fit: cover; /* preenche sem distorcer */
-    display: block;    /*remove espaços indesejados*/
+    width: 100vw;
+    /* ocupa toda a largura da janela */
+    height: auto;
+    /* altura total da tela */
+    object-fit: cover;
+    /* preenche sem distorcer */
+    display: block;
+    /*remove espaços indesejados*/
 }
 
 /* Botões de próximo e anterior */
@@ -411,18 +436,23 @@ section.slider {
 
 /* Cada slide ocupa 100 % da largura do .park-slider */
 .park-slide {
-    flex: 0 0 50%;         /* fixa 100 % da largura, impede “quebra” */
-    position: relative;    /* Reserva o espaço antes da imagem carregar → evita salto */
-    aspect-ratio: 16 / 9;  /* ajuste se suas fotos tiverem outra proporção */
+    flex: 0 0 50%;
+    /* fixa 100 % da largura, impede “quebra” */
+    position: relative;
+    /* Reserva o espaço antes da imagem carregar → evita salto */
+    aspect-ratio: 16 / 9;
+    /* ajuste se suas fotos tiverem outra proporção */
 }
 
 /* Imagem dentro do slide – preenche todo o espaço reservado */
 .park-slide img {
     position: absolute;
-    inset: 0; /* top/right/bottom/left = 0 */
+    inset: 0;
+    /* top/right/bottom/left = 0 */
     width: 100vw;
     height: 50vw;
-    object-fit: cover; /* corta sem distorcer */
+    object-fit: cover;
+    /* corta sem distorcer */
     display: block;
 }
 
@@ -463,99 +493,99 @@ section.slider {
     justify-content: flex-start;
     background-color: #f5f5f5;
     padding: 8px 36px;
-  }
-  
-  .previsao-barra {
+}
+
+.previsao-barra {
     background: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
     max-width: 100%;
-  }
-  
-  .previsao-barra:hover {
+}
+
+.previsao-barra:hover {
     transform: scale(1.02);
-  }
-  
-  .previsao-container {
+}
+
+.previsao-container {
     display: flex;
     align-items: center;
     gap: 20px;
-  }
-  
-  .previsao-esquerda {
+}
+
+.previsao-esquerda {
     display: flex;
     align-items: center;
     gap: 12px;
-  }
-  
-  .weather-icon {
+}
+
+.weather-icon {
     width: 50px;
     height: 50px;
-  }
-  
-  .previsao-temp {
+}
+
+.previsao-temp {
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
-  }
-  
-  .temp-max {
+}
+
+.temp-max {
     font-size: 1.6rem;
     font-weight: bold;
     color: var(--primary);
-  }
-  
-  .temp-min {
+}
+
+.temp-min {
     font-size: 0.9rem;
     color: #666;
-  }
-  
-  .previsao-direita {
+}
+
+.previsao-direita {
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
     text-align: left;
-  }
-  
-  .cidade {
+}
+
+.cidade {
     font-size: 1rem;
     color: var(--primary);
-  }
-  
-  .descricao {
+}
+
+.descricao {
     font-size: 0.9rem;
     color: #444;
     text-transform: capitalize;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
     .area-previsao-do-tempo {
-      justify-content: center;
-      padding: 8px 10px;
+        justify-content: center;
+        padding: 8px 10px;
     }
-  
+
     .previsao-barra {
-      width: 100%;
-      max-width: 95%;
-      padding: 10px;
+        width: 100%;
+        max-width: 95%;
+        padding: 10px;
     }
-  
+
     .previsao-container {
-      gap: 10px;
+        gap: 10px;
     }
-  
+
     .weather-icon {
-      width: 40px;
-      height: 40px;
+        width: 40px;
+        height: 40px;
     }
-  
+
     .temp-max {
-      font-size: 1.3rem;
+        font-size: 1.3rem;
     }
-  }
+}

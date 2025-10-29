@@ -52,3 +52,5 @@ fetch(url)
         console.error("Erro ao obter clima:", error);
         document.querySelector(".descricao").textContent = "Não foi possível carregar o clima.";
     });
+
+    
