@@ -1,10 +1,9 @@
 // URL do seu endpoint proxy hospedado na Vercel
 const url = "https://tereverde-mvp.vercel.app/api/clima?city=Teresopolis,BR";
-const cor = "style.css";
 
-// Variável global para status de trilha
+// Variáveis globais para status de trilha
 let trilhaStatus = "aberta";
-let corStatus = "#27ae60";
+
 
 fetch(url)
     .then(response => response.json())
@@ -27,14 +26,13 @@ fetch(url)
         } else if (condicao.includes("snow")) {
             trilhaStatus = "parcial";            
         } else {
-            trilhaStatus = "aberta";
-            
+            trilhaStatus = "aberta";            
         }
 
         // Exemplo: exibir no console ou usar no site
         console.log(`Status da trilha: ${trilhaStatus}`);
         const textoTrilha = document.getElementById("textoTrilha");
-        const corStatus = document.getElementsByClassName(".status-trilha");
+        const corStatus = document.querySelector('.status-trilha');        
 
         if (trilhaStatus === "fechada") {
             textoTrilha.textContent = "Trilha Fechada devido às condições climáticas";
