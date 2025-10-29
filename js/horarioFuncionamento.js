@@ -1,6 +1,6 @@
 // horarioFuncionamento.js
 
-// Função auxiliar para comparar horários
+// === Função auxiliar para comparar horários ===
 function dentroDoHorario(inicio, fim) {
   const agora = new Date();
   const horaAtual = agora.getHours() + agora.getMinutes() / 60;
@@ -11,73 +11,84 @@ function dentroDoHorario(inicio, fim) {
   return horaAtual >= horaInicio && horaAtual <= horaFim;
 }
 
-// Função principal
+// === Regras automáticas por trilha ===
+const regrasTrilhas = {
+  "pedra do sino": {
+    parque: { inicio: "07:00", fim: "16:00" },
+    horarios: [
+      { nome: "entrada permitida (bate e volta)", inicio: "07:00", fim: "10:00", cor: "#27ae60", corLetra: "#fff" },
+      { nome: "aguardando saída (bate e volta)", inicio: "10:00", fim: "18:30", cor: "#f1c40f", corLetra: "#000" },
+      { nome: "permitido apenas para pernoite", inicio: "07:00", fim: "22:00", cor: "#2980b9", corLetra: "#fff" }
+    ]
+  },
+  "cartão postal": {
+    parque: { inicio: "07:00", fim: "16:00" },
+    horarios: [
+      { nome: "aberta para visitação", inicio: "07:00", fim: "16:00", cor: "#27ae60", corLetra: "#fff" }
+    ]
+  },
+  "caminho das orquídeas": {
+    parque: { inicio: "07:00", fim: "16:00" },
+    horarios: [
+      { nome: "em manutenção", inicio: "00:00", fim: "23:59", cor: "#e67e22", corLetra: "#fff" }
+    ]
+  }
+};
+
+// === Função principal ===
 function atualizarHorarios() {
-  // Pega o container da trilha do Sino
-  const trilhaSino = document.querySelector('.trail-list li strong');
-  const textoTrilha = document.getElementById("textoTrilha");
-  const corStatus = document.querySelector('.status-trilha');
-  if (!textoTrilha || !trilhaSino) return;
+  const trilhas = document.querySelectorAll(".trail-list li");
 
-  // Verifica se estamos lidando com a trilha do Sino
-  const nomeTrilha = trilhaSino.textContent.trim().toLowerCase();
-  if (!nomeTrilha.includes("pedra do sino")) {
-    // Para as outras trilhas, não faz nada (mantém status estático)
-    return;
-  }
+  trilhas.forEach(li => {
+    const nomeTrilha = li.querySelector("strong")?.textContent?.trim().toLowerCase() || "";
+    const textoTrilha = li.querySelector("#textoTrilha");
+    const corStatus = li.querySelector(".status-trilha");
 
-  // ------------------------
-  // Lógica exclusiva da Trilha da Pedra do Sino
-  // ------------------------
+    if (!textoTrilha || !corStatus || !nomeTrilha) return;
 
-  // Verifica horário geral do parque (07h às 16h)
-  let statusParque = "fechado";
-  if (dentroDoHorario("07:00", "16:00")) {
-    statusParque = "aberto";
-  }
+    const regras = Object.entries(regrasTrilhas).find(([nome]) => nomeTrilha.includes(nome));
+    if (!regras) {
+      textoTrilha.textContent = "Sem informações disponíveis";
+      corStatus.style.backgroundColor = "#7f8c8d";
+      textoTrilha.style.color = "#fff";
+      return;
+    }
 
-  // Verifica horários específicos da Trilha do Sino
-  let statusSino = "fora do horário";
-  if (dentroDoHorario("07:00", "10:00")) {
-    statusSino = "entrada permitida (bate e volta)";
-  } else if (dentroDoHorario("10:00", "18:30")) {
-    statusSino = "aguardando saída (bate e volta)";
-  } else if (dentroDoHorario("07:00", "22:00")) {
-    statusSino = "permitido apenas para pernoite";
-  } else {
-    statusSino = "fora do horário de entrada";
-  }
+    const [, config] = regras;
+    const { parque, horarios } = config;
 
-  // Integra clima + horário
-  let mensagem = "";
-  let cor = "#27ae60"; // verde padrão
-  let corLetra = "#fff"; // branco padrão
+    // Verifica se o parque está aberto
+    const parqueAberto = dentroDoHorario(parque.inicio, parque.fim);
+    let mensagem = "";
+    let cor = "#27ae60";
+    let corLetra = "#fff";
 
-  if (typeof trilhaStatus !== "undefined" && trilhaStatus === "fechada") {
-    mensagem = "Trilha Fechada devido ao clima (chuva)";
-    cor = "#c0392b";
-  } else if (statusParque === "fechado") {
-    mensagem = "Trilha Fechada (fora do horário do parque)";
-    cor = "#c0392b";
-  } else if (statusSino.includes("entrada permitida")) {
-    mensagem = "Trilha Aberta (entrada permitida até 10h)";
-    cor = "#27ae60";
-  } else if (statusSino.includes("aguardando saída")) {
-    mensagem = "Trilha em andamento (aguardando saída até 18h30)";
-    cor = "#f1c40f";
-    corLetra = "#000";
-  } else if (statusSino.includes("pernoite")) {
-    mensagem = "Acesso apenas para pernoite";
-    cor = "#2980b9";
-  } else {
-    mensagem = "Trilha Fechada (fora do horário de entrada)";
-    cor = "#c0392b";
-  }
+    // Regra de clima (vem do previsaoTempo.js)
+    if (typeof trilhaStatus !== "undefined" && trilhaStatus === "fechada") {
+      mensagem = "Trilha Fechada devido ao clima (chuva)";
+      cor = "#c0392b";
+      corLetra = "#fff";
+    } else if (!parqueAberto) {
+      mensagem = "Trilha Fechada (fora do horário do parque)";
+      cor = "#c0392b";
+    } else {
+      // Busca horário correspondente dentro da faixa configurada
+      const regraAtual = horarios.find(h => dentroDoHorario(h.inicio, h.fim));
+      if (regraAtual) {
+        mensagem = regraAtual.nome;
+        cor = regraAtual.cor;
+        corLetra = regraAtual.corLetra;
+      } else {
+        mensagem = "Trilha Fechada (fora do horário de entrada)";
+        cor = "#c0392b";
+      }
+    }
 
-  // Atualiza o HTML apenas da trilha do Sino
-  textoTrilha.textContent = mensagem;
-  textoTrilha.style.color = corLetra;
-  corStatus.style.backgroundColor = cor;
+    // Atualiza HTML
+    textoTrilha.textContent = mensagem.charAt(0).toUpperCase() + mensagem.slice(1);
+    textoTrilha.style.color = corLetra;
+    corStatus.style.backgroundColor = cor;
+  });
 }
 
 // Atualiza ao carregar
