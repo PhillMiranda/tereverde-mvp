@@ -73,6 +73,12 @@ footer {
     color: #777;
 }
 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
 /* --- Seção de Alertas --- */
 .alertas {
     background-color: #faf4bb;

@@ -1,0 +1,149 @@
+/* Campos de entrada de largura total */
+input[type=text],
+input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Define um estilo para todos os botões */
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Estilos extras para o botão de cancelar */
+.cancelbtn {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    background-color: #f44336;
+}
+
+/* Container para posicionar o botão de login fixo */
+.login-fixed-wrapper {
+    position: fixed; /* Fixa na tela, independente da rolagem */
+    top: 20px;       /* Distância do topo */
+    right: 20px;     /* Distância da direita */
+    z-index: 1000;   /* Garante que fique acima de outros elementos */
+}
+
+/* O botão dentro do wrapper, garantindo que ele não herde estilos errados */
+.login-fixed-wrapper button {
+    /* Herda o estilo base do botão, mas remove margens/larguras desnecessárias se houver */
+    margin: 0;
+    width: auto;
+}
+
+/* Centraliza a imagem e posiciona o botão de fechar */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    align-items: right;
+}
+
+/* O Modal (fundo) */
+.modal {
+    display: none;     /* Escondido por padrão */
+    position: fixed;   /* Permanece no lugar */
+    z-index: 1;        /* Fica no topo */
+    left: 0;
+    top: 0;
+    width: 100%;       /* Largura total */
+    height: 100%;      /* Altura total */
+    overflow: auto;    /* Habilita a rolagem, se necessário */
+    background-color: rgb(0, 0, 0);        /* Cor alternativa */
+    background-color: rgba(0, 0, 0, 0.4);  /* Preto com opacidade */
+    padding-top: 60px;
+    color: var(--button-1);
+}
+
+/* Conteúdo/Caixa do Modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;     /* 5% do topo, 15% da parte inferior e centralizado */
+    border: 1px solid #888;
+    width: 50%;     /* Pode ser mais ou menos, dependendo do tamanho da tela */
+}
+
+/* O Botão de Fechar (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Adiciona Animação de Zoom */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* Altera estilos para span e botão de cancelar em telas extra pequenas */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+}

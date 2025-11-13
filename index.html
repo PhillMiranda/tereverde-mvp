@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terê Verde Online - Guia de Parques</title>
     <link rel="icon" href="img/Icone-TereVerde2.svg">
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/syleLogin.css">
 </head>
 
 <body>
@@ -19,6 +19,42 @@
             <!--<p>Seu guia atualizado para os parques, montanhas, cachoeiras e tudo de melhor que existe em Teresópolis</p>-->
             <p>Descubra trilhas, parques e aventuras em Teresópolis!</p>
         </div>
+
+        <div class="login-fixed-wrapper">
+            <button onclick="document.getElementById('id_login').style.display='block'" style="width:auto;">Login</button>
+
+            <div id="id_login" class="modal">
+              
+              <form class="modal-content animate clearfix" method="post">
+                <div class="imgcontainer">
+                  <span onclick="document.getElementById('id_login').style.display='none'" class="close" title="Close Modal">&times;</span>
+                  <img src="img/img_avatar2.png" class="avatar">
+                </div>
+            
+                <div class="container">
+                  <label for="uname"><b>Login</b></label>
+                  <input type="text" placeholder="Informe seu usuário" name="uname" required>
+                  <br>
+                  <label for="psw"><b>Senha</b></label>
+                  <input type="password" placeholder="Informe sua senha" name="psw" required>
+                   <br> 
+                  <button type="submit">Acessar</button>
+                  <button type="button" onclick="document.getElementById('id_login').style.display='none'" class="cancelbtn">Cancel</button><br>
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember"> Lembrar senha?
+                  </label>
+                  
+                </div>
+            
+                <div class="container" style="background-color: #f3f3f3;">
+                  <span class="psw">
+                    <a href="#">Esqueceu a senha?</a>
+                  </span>
+                </div>
+              </form>
+            </div>
+        </div>
+
     </header>
     <section>
         <button class="tablink" onclick="openPage('PaginaInicial', this, '#293B14')" id="defaultOpen">Página
@@ -267,6 +303,7 @@
     <script src="js/parqueSlider.js"></script> <!-- sliders dos parques -->
     <script src="js/previsaoTempo.js"></script>
     <script src="js/horarioFuncionamento.js"></script>
+    <script src="js/login.js"></script>
 
 </body>
 
