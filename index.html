@@ -21,7 +21,7 @@
         </div>
 
         <div class="login-fixed-wrapper">
-            <button onclick="document.getElementById('id_login').style.display='block'" style="width:auto;">Login</button>
+            <button class="btn loginbtn" onclick="document.getElementById('id_login').style.display='block'" style="width:auto;">Login</button>
 
             <div id="id_login" class="modal">
               
@@ -38,8 +38,8 @@
                   <label for="psw"><b>Senha</b></label>
                   <input type="password" placeholder="Informe sua senha" name="psw" required>
                    <br> 
-                  <button type="submit">Acessar</button>
-                  <button type="button" onclick="document.getElementById('id_login').style.display='none'" class="cancelbtn">Cancel</button><br>
+                  <button type="submit" class="btn acessobtn">Acessar</button>
+                  <button type="button" onclick="document.getElementById('id_login').style.display='none'" class="btn cancelbtn">Cancel</button><br>
                   <label>
                     <input type="checkbox" checked="checked" name="remember"> Lembrar senha?
                   </label>
