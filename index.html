@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terê Verde Online - Guia de Parques</title>
     <link rel="icon" href="img/Icone-TereVerde2.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/syleLogin.css">
-</head>
+    <link rel="stylesheet" href="css/styleGuia.css" </head>
 
 <body>
 
@@ -21,37 +22,40 @@
         </div>
 
         <div class="login-fixed-wrapper">
-            <button class="btn loginbtn" onclick="document.getElementById('id_login').style.display='block'" style="width:auto;">Login</button>
+            <button class="btn loginbtn" onclick="document.getElementById('id_login').style.display='block'"
+                style="width:auto;">Login</button>
 
             <div id="id_login" class="modal">
-              
-              <form class="modal-content animate clearfix" method="post">
-                <div class="imgcontainer">
-                  <span onclick="document.getElementById('id_login').style.display='none'" class="close" title="Close Modal">&times;</span>
-                  <img src="img/img_avatar2.png" class="avatar">
-                </div>
-            
-                <div class="container">
-                  <label for="uname"><b>Login</b></label>
-                  <input type="text" placeholder="Informe seu usuário" name="uname" required>
-                  <br>
-                  <label for="psw"><b>Senha</b></label>
-                  <input type="password" placeholder="Informe sua senha" name="psw" required>
-                   <br> 
-                  <button type="submit" class="btn acessobtn">Acessar</button>
-                  <button type="button" onclick="document.getElementById('id_login').style.display='none'" class="btn cancelbtn">Cancel</button><br>
-                  <label>
-                    <input type="checkbox" checked="checked" name="remember"> Lembrar senha?
-                  </label>
-                  
-                </div>
-            
-                <div class="container" style="background-color: #f3f3f3;">
-                  <span class="psw">
-                    <a href="#">Esqueceu a senha?</a>
-                  </span>
-                </div>
-              </form>
+
+                <form class="modal-content animate clearfix" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id_login').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
+                        <img src="img/img_avatar2.png" class="avatar">
+                    </div>
+
+                    <div class="container">
+                        <label for="uname"><b>Login</b></label>
+                        <input type="text" placeholder="Informe seu usuário" name="uname" required>
+                        <br>
+                        <label for="psw"><b>Senha</b></label>
+                        <input type="password" placeholder="Informe sua senha" name="psw" required>
+                        <br>
+                        <button type="submit" class="btn acessobtn">Acessar</button>
+                        <button type="button" onclick="document.getElementById('id_login').style.display='none'"
+                            class="btn cancelbtn">Cancel</button><br>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Lembrar senha?
+                        </label>
+
+                    </div>
+
+                    <div class="container" style="background-color: #f3f3f3;">
+                        <span class="psw">
+                            <a href="#">Esqueceu a senha?</a>
+                        </span>
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -129,7 +133,7 @@
                 <p style="color:var(--text-black);"><strong>Atenção:</strong> O Parque Nacional da Serra dos Órgãos está
                     com visitação parcial devido às
                     últimas chuvas. A Trilha do Sino está FECHADA.</p>
-            </section>--> 
+            </section>-->
         </div>
 
         <div id="Parques" class="tabcontent">
@@ -204,26 +208,26 @@
                 <div class="horario-trilha">
                     <p><strong>Horário do Parque:</strong> 07h às 16h</p>
                     <p id="statusHorario">Carregando horários...</p>
-                </div>                          
+                </div>
 
                 <!-- ---------- LISTA DE TRILHAS ---------- -->
                 <ul class="trail-list" style="color:var(--text-black);">
                     <li>
                         <span><strong>Trilha da Pedra do Sino:</strong>
-                        <br>Entrada (07h às 10h), Saída (até 18h30), Pernoite (07h às 22h)</span>
-                        <div class="status-trilha">                            
+                            <br>Entrada (07h às 10h), Saída (até 18h30), Pernoite (07h às 22h)</span>
+                        <div class="status-trilha">
                             <span id="textoTrilha">Carregando status da trilha...</span>
                         </div>
                     </li>
                     <li>
                         <span><strong>Trilha Cartão Postal</strong></span>
-                        <div class="status-trilha">                            
+                        <div class="status-trilha">
                             <span id="textoTrilha">Carregando status da trilha...</span>
                         </div>
                     </li>
                     <li>
                         <span><strong>Caminho das Orquídeas</strong></span>
-                        <div class="status-trilha">                            
+                        <div class="status-trilha">
                             <span id="textoTrilha">Carregando status da trilha...</span>
                         </div>
                     </li>
@@ -262,9 +266,9 @@
     </section>
     </div>
 
-    <div id="Guias" class="tabcontent">
-        <h3>Parque estadual Três Picos</h3>
-        <p>Get in touch, or swing by for a cup of coffee.</p>
+    <div id="Guias" class="tabcontent">        
+        <div class="guia-container" id="guia-cards-container">
+        </div>    
     </div>
 
     <div id="Sobre" class="tabcontent">
@@ -304,6 +308,7 @@
     <script src="js/previsaoTempo.js"></script>
     <script src="js/horarioFuncionamento.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/guiaCards.js"></script>
 
 </body>
 
