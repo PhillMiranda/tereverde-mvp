@@ -1,45 +1,45 @@
 .cardguia {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: 0;
-    text-align: center;
-    font-family: arial;
-    background-color: var(--secundery);
-  }
-  
-  .tipoguia {
-    color: var(--primary-hover);
-    font-size: 18px;
-  }
-  
-  .contatobtn {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: var(--button-1);
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-  }
-  
-  .iconesguia {
-    text-decoration: none;
-    font-size: 22px;
-    color: var(--button-1);
-  }
-  
-  .contatobtn:hover, a:hover {
-    opacity: 0.7;
-  }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 0;
+  text-align: center;
+  font-family: arial;
+  background-color: var(--secundery);
+}
+
+.tipoguia {
+  color: var(--primary-hover);
+  font-size: 18px;
+}
+
+.contatobtn {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: var(--button-1);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.iconesguia {
+  text-decoration: none;
+  font-size: 22px;
+  color: var(--button-1);
+}
+
+.contatobtn:hover, a:hover {
+  opacity: 0.7;
+}
 
 /* Container para dispor os cards lado a lado */
 .guia-container {
-    display: flex;         /* Habilita o Flexbox */
-    flex-wrap: wrap;       /* Permite que os itens quebrem para a próxima linha */
-    justify-content: center; /* Centraliza os cartões horizontalmente */
-    gap: 30px;             /* Espaçamento entre os cartões */
-    padding: 20px;
+  display: flex;         /* Habilita o Flexbox */
+  flex-wrap: wrap;       /* Permite que os itens quebrem para a próxima linha */
+  justify-content: center; /* Centraliza os cartões horizontalmente */
+  gap: 30px;             /* Espaçamento entre os cartões */
+  padding: 20px;
 }

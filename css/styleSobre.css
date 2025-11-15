@@ -1,0 +1,106 @@
+/* ============================================
+   SEÇÃO SOBRE — layout profissional
+   ============================================ */
+
+/* Container principal da seção */
+.sobre-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+/* Título */
+.sobre-container h2 {
+    color: var(--text-black);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Grid dos administradores */
+.admin-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+/* Card da imagem */
+.admin-card {
+    width: 220px;
+    height: 220px;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: filter 0.35s ease, transform 0.35s ease;
+    cursor: pointer;
+}
+
+/* Hover padrão */
+.admin-card:hover {
+    filter: brightness(115%);
+    transform: scale(1.03);
+}
+
+/* ============================================
+   Imagens principais
+   ============================================ */
+.admin-card.phill {
+    background-image: url("../img/phill.png");
+}
+
+.admin-card.rodolpho {
+    background-image: url("../img/rodolpho.png");
+}
+
+.admin-card.pedro {
+    background-image: url("../img/pedro.png");
+}
+
+/* ============================================
+   Imagens ao passar o mouse (HOVER)
+   ============================================ */
+.admin-card.phill:hover {
+    background-image: url("../img/phill-hover.png");
+}
+
+.admin-card.rodolpho:hover {
+    background-image: url("../img/rodolpho-hover.png");
+}
+
+.admin-card.pedro:hover {
+    background-image: url("../img/pedro-hover.png");
+}
+
+/* ============================================
+   Responsividade
+   ============================================ */
+
+@media (max-width: 768px) {
+    .admin-card {
+        width: 180px;
+        height: 180px;
+    }
+
+    .sobre-container h2 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-card {
+        width: 150px;
+        height: 150px;
+    }
+
+    .sobre-container {
+        padding: 2rem 1rem;
+    }
+
+    .sobre-container h2 {
+        font-size: 1.4rem;
+    }
+}
