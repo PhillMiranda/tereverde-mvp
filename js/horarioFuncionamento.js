@@ -32,6 +32,12 @@ const regrasTrilhas = {
     horarios: [
       { nome: "em manutenção", inicio: "00:00", fim: "23:59", cor: "#e67e22", corLetra: "#fff" }
     ]
+  },
+  "caminho da casa do Rodolpho": {
+    parque: { inicio: "07:00", fim: "16:00" },
+    horarios: [
+      { nome: "em manutenção", inicio: "00:00", fim: "23:59", cor: "#e67e22", corLetra: "#fff" }
+    ]
   }
 };
 
