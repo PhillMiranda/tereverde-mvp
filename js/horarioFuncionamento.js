@@ -12,6 +12,7 @@ function dentroDoHorario(inicio, fim) {
 }
 
 // === Regras automáticas por trilha ===
+//Parque Nacional
 const regrasTrilhas = {
   "pedra do sino": {
     parque: { inicio: "07:00", fim: "16:00" },
@@ -39,6 +40,9 @@ const regrasTrilhas = {
       { nome: "em manutenção", inicio: "00:00", fim: "23:59", cor: "#e67e22", corLetra: "#fff" }
     ]
   }
+
+//Parque três picos
+
 };
 
 // === Função principal ===
