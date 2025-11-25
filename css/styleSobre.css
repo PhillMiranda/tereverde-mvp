@@ -49,30 +49,30 @@
    Imagens principais
    ============================================ */
 .admin-card.phill {
-    background-image: url("../img/phill.png");
+    background-image: url("../img/quem_somos/phill.png");
 }
 
 .admin-card.rodolpho {
-    background-image: url("../img/rodolpho.png");
+    background-image: url("../img/quem_somos/rodolpho.png");
 }
 
 .admin-card.pedro {
-    background-image: url("../img/pedro.png");
+    background-image: url("../img/quem_somos/pedro.png");
 }
 
 /* ============================================
    Imagens ao passar o mouse (HOVER)
    ============================================ */
 .admin-card.phill:hover {
-    background-image: url("../img/phill-hover.png");
+    background-image: url("../img/quem_somos/phill-hover.png");
 }
 
 .admin-card.rodolpho:hover {
-    background-image: url("../img/rodolpho-hover.png");
+    background-image: url("../img/quem_somos/rodolpho-hover.png");
 }
 
 .admin-card.pedro:hover {
-    background-image: url("../img/pedro-hover.png");
+    background-image: url("../img/quem_somos/pedro-hover.png");
 }
 
 /* ============================================
