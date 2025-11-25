@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terê Verde Online - Guia de Parques</title>
-    <link rel="icon" href="img/Icone-TereVerde2.svg">
+    <link rel="icon" href="img/identidade_visual/Icone-TereVerde2.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/syleLogin.css">
@@ -17,7 +17,7 @@
 <body>
 
     <header>
-        <img src="img/Logo-TereVerde2.svg" alt="Logo Terê Verde" class="logo">
+        <img src="img/identidade_visual/Logo-TereVerde2.svg" alt="Logo Terê Verde" class="logo">
         <div class="row">
             <h1>Bem-vindo ao TerêVerde</h1>
             <!--<p>Seu guia atualizado para os parques, montanhas, cachoeiras e tudo de melhor que existe em Teresópolis</p>-->
@@ -63,30 +63,31 @@
         </div>
 
     </header>
+    <section class="area-previsao-do-tempo">
+        <div class="previsao-barra">
+            <div class="previsao-container">
+                <div class="previsao-esquerda row">
+                    <img class="weather-icon" src="" alt="Ícone do clima">
+                    <div class="previsao-temp">
+                        <span class="temp-max">--° Máx.</span>
+                        <span class="temp-min">--° Mín.</span>
+                    </div>
+                </div>
+                <div class="previsao-direita">
+                    <div class="cidade"><strong>Teresópolis</strong></div>
+                    <div class="descricao">Carregando...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section>
         <button class="tablink" onclick="openPage('PaginaInicial', this, '#293B14')" id="defaultOpen">Página inicial</button>
         <button class="tablink" onclick="openPage('Parques', this, '#344D0E')">Parques</button>
         <button class="tablink" onclick="openPage('Guias', this, '#4d7019')">Guias</button>
         <button class="tablink" onclick="openPage('Sobre', this, '#76993D')">Sobre</button>
 
-        <div id="PaginaInicial" class="tabcontent">
-            <section class="area-previsao-do-tempo">
-                <div class="previsao-barra">
-                    <div class="previsao-container">
-                        <div class="previsao-esquerda">
-                            <img class="weather-icon" src="" alt="Ícone do clima">
-                            <div class="previsao-temp">
-                                <span class="temp-max">--° Máx.</span>
-                                <span class="temp-min">--° Mín.</span>
-                            </div>
-                        </div>
-                        <div class="previsao-direita">
-                            <div class="cidade"><strong>Teresópolis</strong></div>
-                            <div class="descricao">Carregando...</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div id="PaginaInicial" class="tabcontent">          
 
             <section class="slider">
                 <div class="slideshow-container">

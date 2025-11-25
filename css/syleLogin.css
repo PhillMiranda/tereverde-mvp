@@ -41,7 +41,8 @@ input[type=password] {
 
 /* Container para posicionar o botão de login fixo */
 .login-fixed-wrapper {
-    position: fixed; /* Fixa na tela, independente da rolagem */
+    position: absolute; /* Fixa na tela, independente da rolagem */
+    margin-right: 0;
     top: 20px;       /* Distância do topo */
     right: 20px;     /* Distância da direita */
     z-index: 1000;   /* Garante que fique acima de outros elementos */
