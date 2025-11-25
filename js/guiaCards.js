@@ -3,38 +3,44 @@ const dadosGuias = [
     {
         nome: "Romulo Miranda",
         tipo: "Guia alpinista",
-        imagem: "img/romulo-miranda.jpg",
+        status: "Ativo",
+        imagem: "img/guias/guia1/romulo-miranda.png",
         links: {
-            dribbble: "#",
-            twitter: "#",
-            linkedin: "#",
-            facebook: "#"
+            instagram: "https://www.instagram.com/romulomiranda2025/",
+            linkedin: "https://www.linkedin.com/in/romulo-miranda-39b197275/",
+            facebook: "https://www.facebook.com/perrfilassessoria0"
         },
-        contato: "#"
+        contato: "https://wa.me/5521987161707?text=Queria%20agendar%20um%20dia%20para%20realizar%20uma%20trilha.%20Voc%C3%AA%20teria%20disponibilidade%3F",
+        servico: "Guias de Trilhas e Aulas de Escalada",
+        emailLead: "romulo@example.com"
     },
     {
-        nome: "Rudolfo Irmão",
-        tipo: "Guia alpinista",
-        imagem: "img/rudolfo-irmao.jpg",
+        nome: "Leo Rodrigues",
+        tipo: "Guia alpinista e de trilhas",
+        status: "Inativo",
+        imagem: "img/guias/guia2/leo-aventureiro.png",
         links: {
-            dribbble: "#",
-            twitter: "#",
-            linkedin: "#",
-            facebook: "#"
+            instagram: "https://www.instagram.com/leo_rodriguesxt/",
+            linkedin: "https://www.linkedin.com/in/leo_rodriguesxt/",
+            facebook: "https://www.facebook.com/leo_rodriguesxt0"
         },
-        contato: "#"
+        contato: "https://wa.me/5521987161707?text=Queria%20agendar%20um%20dia%20para%20realizar%20uma%20trilha.%20Voc%C3%AA%20teria%20disponibilidade%3F",
+        servico: "Aulas de Escalada e Guias de Trilhas",
+        emailLead: "leoridrig@example.com"
     },
     {
-        nome: "Senhor das Trilhas",
+        nome: "Matheus Edgard",
         tipo: "Guia de trilhas",
-        imagem: "img/senhor-trilhas.jpg",
+        status: "Ativo",
+        imagem: "img/guias/guia3/matheusedgard.png",
         links: {
-            dribbble: "#",
-            twitter: "#",
-            linkedin: "#",
-            facebook: "#"
+            instagram: "https://www.instagram.com/matheusedgard/",
+            linkedin: "https://www.linkedin.com/in/matheusedgard/",
+            facebook: "https://www.facebook.com/matheusedgard"
         },
-        contato: "#"
+        contato: "https://wa.me/5521987161707?text=Queria%20agendar%20um%20dia%20para%20realizar%20uma%20trilha.%20Voc%C3%AA%20teria%20disponibilidade%3F",
+        servico: "Guia de Trilhas e Aventuras",
+        emailLead: "matheusedgard@example.com"
     }    
     // Adicione mais guias aqui
 ];
@@ -46,9 +52,11 @@ function criarCardGuia(guia) {
             <img src="${guia.imagem}" alt="${guia.nome}" style="width:100%">
             <h1>${guia.nome}</h1>
             <p class="tipoguia">${guia.tipo}</p>
+            <p style="color: white; fontSize: "16px" }}>${guia.servico}</p>
+            <p style="color: ${guia.status === 'Ativo' ? 'var(--status-green)' : 'var(--status-red)'}; font-weight: bold;">Status: ${guia.status}</p>
+
             <div style="margin: 24px 0;">
-                <a href="${guia.links.dribbble}"><i class="fa fa-dribbble iconesguia"></i></a>
-                <a href="${guia.links.twitter}"><i class="fa fa-twitter iconesguia"></i></a>
+                <a href="${guia.links.instagram}"><i class="fa fa-instagram iconesguia"></i></a>
                 <a href="${guia.links.linkedin}"><i class="fa fa-linkedin iconesguia"></i></a>
                 <a href="${guia.links.facebook}"><i class="fa fa-facebook iconesguia"></i></a>
             </div>

@@ -394,7 +394,7 @@ section.slider {
    ============================================================ */
 .area-previsao-do-tempo {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     background-color: #f5f5f5;
     padding: 8px 36px;
 }
