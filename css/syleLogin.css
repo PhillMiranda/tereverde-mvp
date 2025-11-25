@@ -93,7 +93,7 @@ span.psw {
 
 /* Conteúdo/Caixa do Modal */
 .modal-content {
-    background-color: #fefefe;
+    background-color: var(--secundary); 
     margin: 5% auto 15% auto;     /* 5% do topo, 15% da parte inferior e centralizado */
     border: 1px solid #888;
     width: 50%;     /* Pode ser mais ou menos, dependendo do tamanho da tela */

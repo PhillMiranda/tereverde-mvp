@@ -1,10 +1,21 @@
 .cardguia {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  width: 300px;
   margin: 0;
   text-align: center;
   font-family: arial;
-  background-color: var(--secundery);
+  display: flex;
+  flex-direction: column; 
+  height: 100%;
+  justify-content: space-between; 
+}
+
+.card-content {
+  padding: 0 10px 10px 10px; /* 0 em cima, 10px nas laterais e embaixo */
+  display: flex; /* Mantemos o flex para alinhar o botão */
+  flex-direction: column;
+  flex-grow: 1; /* Permite que o conteúdo cresça e force o botão para baixo */
+  justify-content: space-between;
 }
 
 .tipoguia {
@@ -16,7 +27,6 @@
   border: none;
   outline: 0;
   display: inline-block;
-  padding: 8px;
   color: white;
   background-color: var(--button-1);
   text-align: center;
@@ -35,6 +45,86 @@
   opacity: 0.7;
 }
 
+/* --- Carrossel de Imagens do Guia --- */
+
+/* O container limita a área e define a altura da foto */
+.img-container-guia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1824 / 1212;
+  overflow: hidden;
+  background-color: #ddd; /* Cor de fundo enquanto carrega */
+  margin: 0;
+}
+
+/* As imagens ficam absolutas para ocupar o mesmo espaço */
+.guia-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a foto preencha sem distorcer */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Transição suave */
+}
+
+/* Apenas a imagem com a classe 'ativa' aparece */
+.guia-img.ativa {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Modal de Imagem (Tela Cheia) */
+.modal-imagem {
+  display: none; /* Escondido por padrão */
+  position: fixed; /* Fixa na tela */
+  z-index: 100; /* Fica por cima de tudo */
+  padding-top: 60px; /* Espaçamento do topo */
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; /* Permite scroll se a imagem for maior que a tela */
+  background-color: rgb(0,0,0); /* Fundo preto */
+  background-color: rgba(0,0,0,0.9); /* Fundo preto com transparência */
+}
+
+/* Conteúdo/Imagem dentro do Modal */
+.conteudo-modal-imagem {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+/* Animação de zoom (opcional, mas legal) */
+@keyframes zoom {
+  from {transform:scale(0.1)} 
+  to {transform:scale(1)}
+}
+
+/* Botão de Fechar */
+.fechar-imagem {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.fechar-imagem:hover,
+.fechar-imagem:focus {
+  color: #bbb;
+  text-decoration: none;
+}
+
 /* Container para dispor os cards lado a lado */
 .guia-container {
   display: flex;         /* Habilita o Flexbox */
@@ -42,4 +132,76 @@
   justify-content: center; /* Centraliza os cartões horizontalmente */
   gap: 30px;             /* Espaçamento entre os cartões */
   padding: 20px;
+  align-items: stretch;
+}
+
+/* Estilos do Formulário Modal Adaptado */
+.container-form {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Inputs e Selects */
+.container-form input[type=text], 
+.container-form select, 
+.container-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.container-form label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  color: var(--primary); /* Cor do texto principal */
+  font-weight: bold;
+}
+
+/* Botão de Enviar */
+.container-form input[type=submit] {
+  background-color: var(--button-1); /* Sua cor de botão */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  width: 100%;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.container-form input[type=submit]:hover {
+  background-color: var(--primary-hover); /* Sua cor de hover */
+}
+
+/* Colunas Responsivas (do seu código original) */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Limpar floats */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, .container-form input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+  }
 }

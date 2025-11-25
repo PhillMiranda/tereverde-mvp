@@ -227,13 +227,7 @@
                         <div class="status-trilha">
                             <span id="textoTrilha">Carregando status da trilha...</span>
                         </div>
-                    </li>
-                    <li>
-                        <span><strong>Caminho da casa do Rodolpho</strong></span>
-                        <div class="status-trilha">
-                            <span id="textoTrilha">Carregando status da trilha...</span>
-                        </div>
-                    </li>                    
+                    </li>               
                 </ul>
         </div>
 
@@ -293,9 +287,64 @@
     </section>
 
     <footer>
-        <img src="img/Icone-TereVerde2.svg" alt="Logo Terê Verde" class="logo" width="10%" height="10%">
+        <img src="img/identidade_visual/Icone-TereVerde2.svg" alt="Logo Terê Verde" class="logo" width="10%" height="10%">
         <p>Terê Verde Online © 2025 - Um projeto MVP</p>
     </footer>
+
+    <div id="modal-contato" class="modal">
+        <form class="modal-content animate" onsubmit="enviarWhatsapp(event)">
+            
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('modal-contato').style.display='none'" class="close" title="Fechar">&times;</span>
+                <img src="img/identidade_visual/Icone-TereVerde2.svg" alt="Logo Terê Verde" class="avatar" style="width: 30%; height: auto;">
+                <h2 style="color: var(--primary); text-align: center;">Agendar com Guia</h2>
+            </div>
+    
+            <div class="container-form">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="nome">Seu Nome</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="form-nome" name="firstname" placeholder="Digite seu nome.." required>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-25">
+                        <label for="parque">Parque de Interesse</label>
+                    </div>
+                    <div class="col-75">
+                        <select id="form-parque" name="parque">
+                            <option value="Parque Nacional da Serra dos Órgãos (PARNASO)">PARNASO</option>
+                            <option value="Parque Estadual dos Três Picos">Parque dos Três Picos</option>
+                            <option value="Parque Montanhas de Teresópolis">Montanhas de Teresópolis</option>
+                            <option value="Outro">Outro / Não sei ainda</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-25">
+                        <label for="mensagem">Mensagem</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="form-mensagem" name="subject" placeholder="Gostaria de saber a disponibilidade para..." style="height:150px" required></textarea>
+                    </div>
+                </div>
+    
+                <div class="row" style="margin-top: 20px;">
+                    <input type="submit" value="Enviar via WhatsApp">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="modal-imagem" class="modal-imagem">
+        <span class="fechar-imagem" onclick="fecharModalImagem()">&times;</span>
+        <img class="conteudo-modal-imagem" id="img01">
+        <div id="legenda" class="legenda-modal"></div>
+    </div>
 
     <script src="js/colorirTela.js"></script> <!-- abas -->
     <script src="js/script.js"></script> <!-- accordion das trilhas -->
@@ -305,6 +354,7 @@
     <script src="js/horarioFuncionamento.js"></script>
     <script src="js/login.js"></script>
     <script src="js/guiaCards.js"></script>
+    <script src="js/carouselGuias.js"></script>
 
 </body>
 
