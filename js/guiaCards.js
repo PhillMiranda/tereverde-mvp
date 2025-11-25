@@ -21,7 +21,7 @@ const dadosGuias = [
             linkedin: "https://www.linkedin.com/in/romulo-miranda-39b197275/",
             facebook: "https://www.facebook.com/perrfilassessoria0"
         },
-        telefone: "5521987161707",
+        telefone: "5521966226642",
         servico: "Guias de Trilhas e Aulas de Escalada",
         emailLead: "romulo@example.com"
     },
@@ -60,7 +60,7 @@ const dadosGuias = [
             linkedin: "https://www.linkedin.com/in/matheusedgard/",
             facebook: "https://www.facebook.com/matheusedgard"
         },
-        telefone: "5521987161707",
+        telefone: "5521990488750",
         servico: "Guia de Trilhas e Aventuras",
         emailLead: "matheusedgard@example.com"
     }    
