@@ -63,6 +63,26 @@ const dadosGuias = [
         telefone: "5521990488750",
         servico: "Guia de Trilhas e Aventuras",
         emailLead: "matheusedgard@example.com"
+    },
+    {
+        nome: "Marcelo Pereira",
+        tipo: "Guia de trilhas e fotógrafo",
+        status: "Ativo",
+        imagens: [
+            "img/guias/guia4/marcelopereira.jpg",
+            "img/guias/guia4/guia-marcelopereira-1.png",
+            "img/guias/guia4/guia-marcelopereira-2.png",
+            "img/guias/guia4/guia-marcelopereira-3.png",
+            "img/guias/guia4/guia-marcelopereira-4.png"            
+        ],
+        links: {
+            instagram: "https://www.instagram.com/hitrekk/",
+            linkedin: "https://www.linkedin.com/in/marcelo-pereira-bb01aa331/",
+            facebook: "https://www.facebook.com/search/top?q=hitrekk"
+        },
+        telefone: "5521990488750",
+        servico: "Guia de Trilhas e Aventuras",
+        emailLead: "marcelopereira@example.com"
     }    
 ];
 
