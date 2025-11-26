@@ -50,7 +50,9 @@
                                     <input type="password" placeholder="Digite sua senha" name="psw" required>
                                     <br>
                                     <button type="submit" class="btn acessobtn">Entrar</button>
-                                    <button type="button" onclick="document.getElementById('id_auth').style.display='none'" class="btn cancelbtn">Cancel</button>
+                                    <button type="button"
+                                        onclick="document.getElementById('id_auth').style.display='none'"
+                                        class="btn cancelbtn">Cancel</button>
                                     <br>
                                     <label>
                                         <input type="checkbox" checked="checked" name="remember"> Lembre-me
@@ -80,18 +82,21 @@
                                 <label for="tel"><b>Telefone </b></label>
                                 <input type="tel" placeholder="(XX) 9 9999-9999" name="tel" required>
                                 <br>
-                                <label for="psw-new"><b>Senha   </b></label>
+                                <label for="psw-new"><b>Senha </b></label>
                                 <input type="password" placeholder="Crie uma senha" name="psw-new" required>
                                 <br>
                                 <label for="psw-repeat"><b>Confirme</b></label>
                                 <input type="password" placeholder="Repita a senha" name="psw-repeat" required>
                                 <br>
-                                <button type="submit" class="btn loginbtn" style="background-color: var(--button-1);">Cadastrar</button>
-                                <button type="button" onclick="document.getElementById('id_auth').style.display='none'" class="btn cancelbtn">Cancel</button>    
+                                <button type="submit" class="btn loginbtn"
+                                    style="background-color: var(--button-1);">Cadastrar</button>
+                                <button type="button" onclick="document.getElementById('id_auth').style.display='none'"
+                                    class="btn cancelbtn">Cancel</button>
 
                                 <div
                                     style="margin-top: 20px; text-align: center; border-top: 1px solid #eee; padding-top: 15px;">
-                                    <p>Já possui conta? <a onclick="animarParaLogin()" class="toggle-link">Faça Login</a></p>
+                                    <p>Já possui conta? <a onclick="animarParaLogin()" class="toggle-link">Faça
+                                            Login</a></p>
                                 </div>
                             </form>
                         </div>
@@ -176,139 +181,9 @@
         <div id="Parques" class="tabcontent">
             <section class="parques-container">
                 <h2 style="color:var(--secundery);">Explore os Parques</h2>
-
-                <!-- ==================== CARD DO PARQUE ==================== -->
-                <div class="park-card">
-
-                    <!-- cabeçalho (accordion) -->
-                    <div class="park-header">
-                        <h3>Parque Nacional da Serra dos Órgãos (PARNASO)</h3>
-                    </div>
-                    <!-- ---------- SLIDER DO PARQUE ---------- -->
-                    <section class="park-slider" data-park="1">
-                        <div class="slideshow-container">
-
-                            <!-- slide 1 -->
-                            <div class="park-slide fade">
-                                <img src="img/parques/parque_nacional/PARNASO_1.jpg" alt="Mirante">
-                            </div>
-
-                            <!-- slide 2 -->
-                            <div class="park-slide fade">
-                                <img src="img/parques/parque_nacional/PARNASO_2.jpg" alt="Cachoeira">
-                            </div>
-
-                            <!-- slide 3 -->
-                            <div class="park-slide fade">
-                                <img src="img/parques/parque_nacional/PARNASO_3.jpg" alt="Trilha do Sino">
-                            </div>
-
-                            <!-- slide 4 -->
-                            <div class="park-slide fade">
-                                <img src="img/parques/parque_nacional/PARNASO_4.jpg" alt="Vista da Serra">
-                            </div>
-
-                            <!-- slide 4 -->
-                            <div class="park-slide fade">
-                                <img src="img/parques/parque_nacional/PARNASO_5.jpg" alt="Vista da Serra">
-                            </div>
-
-                            <!-- botões de navegação -->
-                            <a class="prev" onclick="parkPlusSlides(1, -1)">&#10094;</a>
-                            <a class="next" onclick="parkPlusSlides(1, 1)">&#10095;</a>
-                        </div>
-                    </section>
-
-                    <!-- descrição opcional -->
-                    <div class="col trail-list" style="color:var(--text-black); text-indent: 20px;">
-                        <p>O Parque Nacional da Serra dos Órgos <strong>(PARNASO)</strong> é uma unidade de conservação
-                            de 19.855 hectares localizada na Região Serrana do Rio de Janeiro (abrangendo Teresópolis,
-                            Petrópolis, Magé e Guapimirim).</p>
-                        <br>
-                        <p>Os aspectos mais relevantes são:</p>
-                        <div style=" text-indent: 50px;">
-                            <p><strong>Importância Histórica:</strong> Criado em 1939, é o terceiro parque nacional mais
-                                antigo do Brasil.</p>
-                            <p><strong>Atrações e Esportes:</strong> É considerado um dos melhores locais do país para
-                                esportes de montanha (escalada, caminhada, rapel) e possui cachoeiras.</p>
-                            <p><strong>Rede de Trilhas:</strong> Possui a maior rede de trilhas do Brasil, com mais de
-                                200
-                                km em todos os níveis de dificuldade, incluindo desde trilhas acessíveis a cadeirantes
-                                até a
-                                famosa Travessia Petrópolis-Teresópolis (30 km).</p>
-                            <p><strong>Marcos da Escalada:</strong> Abriga picos icônicos como o Dedo de Deus,
-                                considerado o
-                                marco inicial da escalada no país, e a Agulha do Diabo.</p>
-                            <p><strong>Biodiversidade e Conservação:</strong> O parque abrange uma vasta biodiversidade
-                                com
-                                mais de 2.800 espécies de plantas, centenas de espécies de animais, incluindo 130
-                                animais
-                                ameaçados de extinção e muitas espécies endêmicas (que só existem ali).</p>
-                            <p><strong>Administração:</strong> É administrado pelo Instituto Chico Mendes de Conservação
-                                da
-                                Biodiversidade (ICMBio).</p>
-                        </div>
-                        </p>
-                    </div><br>
-
-                    <div class="horario-trilha" style="color:var(--text-black);">
-                        <p><strong>Horário do Parque:</strong> 07h às 16h</p>
-                        <p id="statusHorario">Carregando horários...</p>
-                    </div>
-
-                    <!-- ---------- LISTA DE TRILHAS ---------- -->
-                    <ul class="trail-list" style="color:var(--text-black);">
-                        <li>
-                            <span><strong>Trilha da Pedra do Sino:</strong>
-                                <br>Entrada (07h às 10h), Saída (até 18h30), Pernoite (07h às 22h)</span>
-                            <div class="status-trilha">
-                                <span id="textoTrilha">Carregando status da trilha...</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span><strong>Trilha Cartão Postal</strong></span>
-                            <div class="status-trilha">
-                                <span id="textoTrilha">Carregando status da trilha...</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span><strong>Caminho das Orquídeas</strong></span>
-                            <div class="status-trilha">
-                                <span id="textoTrilha">Carregando status da trilha...</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <article class="park-card">
-                    <div class="park-header">
-                        <h3>Parque Estadual dos Três Picos (PETP)</h3>
-                    </div>
-                    <ul class="trail-list" style="color:var(--text-black);">
-                        <li>
-                            <span>Trilha dos Três Picos</span>
-                            <span class="status status-aberta">Aberta</span>
-                        </li>
-                        <li>
-                            <span>Trilha da Caixa de Fósforos</span>
-                            <span class="status status-aberta">Aberta</span>
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="park-card">
-                    <div class="park-header">
-                        <h3>Parque Natural Municipal Montanhas de Teresópolis</h3>
-                    </div>
-                    <ul class="trail-list" style="color:var(--text-black);">
-                        <li>
-                            <span>Trilha da Pedra do Elefante</span>
-                            <span class="status status-aberta">Aberta</span>
-                        </li>
-                    </ul>
-                </article>
-
+                <div class="park-card"></div>
+                    <div id="container-parques-dinamico"></div>
+                </div>                
             </section>
         </div>
 
