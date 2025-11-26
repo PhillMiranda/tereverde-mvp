@@ -1,8 +1,10 @@
 /* Campos de entrada de largura total */
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type=email],
+input[type=tel] { 
     width: 50%;
-    padding: 12px 20px;
+    padding: 12px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -41,16 +43,15 @@ input[type=password] {
 
 /* Container para posicionar o botão de login fixo */
 .login-fixed-wrapper {
-    position: absolute; /* Fixa na tela, independente da rolagem */
+    position: absolute;
     margin-right: 0;
-    top: 20px;       /* Distância do topo */
-    right: 20px;     /* Distância da direita */
-    z-index: 1000;   /* Garante que fique acima de outros elementos */
+    top: 20px;     
+    right: 20px;   
+    z-index: 1000; 
 }
 
 /* O botão dentro do wrapper, garantindo que ele não herde estilos errados */
 .login-fixed-wrapper button {
-    /* Herda o estilo base do botão, mas remove margens/larguras desnecessárias se houver */
     margin: 0;
     width: auto;
 }
@@ -94,9 +95,55 @@ span.psw {
 /* Conteúdo/Caixa do Modal */
 .modal-content {
     background-color: var(--secundary); 
-    margin: 5% auto 15% auto;     /* 5% do topo, 15% da parte inferior e centralizado */
+    margin: 5% auto 15% auto;
     border: 1px solid #888;
-    width: 50%;     /* Pode ser mais ou menos, dependendo do tamanho da tela */
+    width: 50%; /* Largura fixa ou max-width para o slide funcionar bem */
+    max-width: 95%; /* Responsividade */
+    overflow: hidden; /* IMPORTANTE: Esconde o formulário que está "fora" da caixa */
+    position: relative;
+    border-radius: 5px;    
+}
+
+.modal-content hr {
+    border: 1px solid var(--primary-hover);
+    margin-bottom: 250px;
+}
+
+.modal-content label {
+    color: var(--primary); /* Verde escuro do tema */
+    display: inline-block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.container-form {
+    padding: 16px; 
+}
+
+.form-slider {
+    display: flex; /* Coloca os formulários um ao lado do outro */
+    width: 200%;   /* 100% para login + 100% para cadastro */
+    transition: transform 0.6s ease-in-out; /* A animação suave do slide */
+}
+
+.form-section {
+    width: 50%; /* Cada um ocupa metade do slider (ou seja, 100% da janela visível) */
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.slide-active {
+    transform: translateX(-50%); /* Move o slider para mostrar a metade direita */
+}
+
+.toggle-link {
+    color: var(--primary-hover);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+.toggle-link:hover {
+    text-decoration: underline;
 }
 
 /* O Botão de Fechar (x) */

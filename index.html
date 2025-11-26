@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/syleLogin.css">
     <link rel="stylesheet" href="css/styleGuia.css">
-    <link rel="stylesheet" href="css/styleSobre.css"> 
+    <link rel="stylesheet" href="css/styleSobre.css">
 
 </head>
 
@@ -25,40 +25,79 @@
         </div>
 
         <div class="login-fixed-wrapper">
-            <button class="btn loginbtn" onclick="document.getElementById('id_login').style.display='block'"
-                style="width:auto;">Login</button>
+            <button class="btn loginbtn" onclick="abrirModalLogin()">Login</button>
+            <button class="btn acessobtn" onclick="abrirModalCadastro()">Cadastro</button>
 
-            <div id="id_login" class="modal">
+            <div id="id_auth" class="modal">
 
-                <form class="modal-content animate clearfix" method="post">
-                    <div class="imgcontainer">
-                        <span onclick="document.getElementById('id_login').style.display='none'" class="close"
-                            title="Close Modal">&times;</span>
-                        <img src="img/identidade_visual/Icone-TereVerde2.svg" class="avatar">
+                <div class="modal-content animate">
+                    <span onclick="fecharModalAuth()" class="close" title="Fechar">&times;</span>
+
+                    <div class="form-slider" id="sliderAuth">
+
+                        <div class="form-section login-section">
+                            <form action="/login_action.php" method="post">
+                                <div class="imgcontainer" style="text-align:center; margin-bottom:15px;">
+                                    <img src="img/identidade_visual/Icone-TereVerde2.svg" alt="Avatar" class="avatar">
+                                    <h2>Bem-vindo de volta!</h2>
+                                </div>
+
+                                <div class="container">
+                                    <label for="uname"><b>Usuário </b></label>
+                                    <input type="text" placeholder="Digite seu usuário" name="uname" required>
+                                    <br>
+                                    <label for="psw"><b>Senha </b></label>
+                                    <input type="password" placeholder="Digite sua senha" name="psw" required>
+                                    <br>
+                                    <button type="submit" class="btn acessobtn">Entrar</button>
+                                    <button type="button" onclick="document.getElementById('id_auth').style.display='none'" class="btn cancelbtn">Cancel</button>
+                                    <br>
+                                    <label>
+                                        <input type="checkbox" checked="checked" name="remember"> Lembre-me
+                                    </label>
+                                </div>
+
+                                <div
+                                    style="margin-top: 20px; text-align: center; border-top: 1px solid #eee; padding-top: 15px;">
+                                    <span class="psw">Esqueceu a <a href="#" class="toggle-link">senha?</a></span>
+                                    <p>Ainda não tem conta? <a onclick="animarParaCadastro()"
+                                            class="toggle-link">Cadastre-se</a></p>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="form-section cadastro-section">
+                            <span onclick="fecharModalAuth()" class="close" title="Fechar">&times;</span>
+                            <form action="/cadastro_action.php" method="post">
+                                <div style="text-align:center; margin-bottom:15px;">
+                                    <img src="img/identidade_visual/Icone-TereVerde2.svg" alt="Avatar" class="avatar">
+                                    <h2>Fala guia, crie sua conta!</h2>
+                                </div>
+
+                                <label for="email"><b>Email</b></label>
+                                <input type="text" placeholder="Seu melhor email" name="email" required>
+                                <br>
+                                <label for="tel"><b>Telefone </b></label>
+                                <input type="tel" placeholder="(XX) 9 9999-9999" name="tel" required>
+                                <br>
+                                <label for="psw-new"><b>Senha   </b></label>
+                                <input type="password" placeholder="Crie uma senha" name="psw-new" required>
+                                <br>
+                                <label for="psw-repeat"><b>Confirme</b></label>
+                                <input type="password" placeholder="Repita a senha" name="psw-repeat" required>
+                                <br>
+                                <button type="submit" class="btn loginbtn" style="background-color: var(--button-1);">Cadastrar</button>
+                                <button type="button" onclick="document.getElementById('id_auth').style.display='none'" class="btn cancelbtn">Cancel</button>    
+
+                                <div
+                                    style="margin-top: 20px; text-align: center; border-top: 1px solid #eee; padding-top: 15px;">
+                                    <p>Já possui conta? <a onclick="animarParaLogin()" class="toggle-link">Faça Login</a></p>
+                                </div>
+                            </form>
+                        </div>
+
                     </div>
-
-                    <div class="container">
-                        <label for="uname"><b>Login</b></label>
-                        <input type="text" placeholder="Informe seu usuário" name="uname" required>
-                        <br>
-                        <label for="psw"><b>Senha</b></label>
-                        <input type="password" placeholder="Informe sua senha" name="psw" required>
-                        <br>
-                        <button type="submit" class="btn acessobtn">Acessar</button>
-                        <button type="button" onclick="document.getElementById('id_login').style.display='none'"
-                            class="btn cancelbtn">Cancel</button><br>
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember"> Lembrar senha?
-                        </label>
-
-                    </div>
-
-                    <div class="container" style="background-color: #f3f3f3;">
-                        <span class="psw">
-                            <a href="#">Esqueceu a senha?</a>
-                        </span>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
 
@@ -82,12 +121,13 @@
     </section>
 
     <section>
-        <button class="tablink" onclick="openPage('PaginaInicial', this, '#293B14')" id="defaultOpen">Página inicial</button>
+        <button class="tablink" onclick="openPage('PaginaInicial', this, '#293B14')" id="defaultOpen">Página
+            inicial</button>
         <button class="tablink" onclick="openPage('Parques', this, '#344D0E')">Parques</button>
         <button class="tablink" onclick="openPage('Guias', this, '#4d7019')">Guias</button>
         <button class="tablink" onclick="openPage('Sobre', this, '#76993D')">Sobre</button>
 
-        <div id="PaginaInicial" class="tabcontent">          
+        <div id="PaginaInicial" class="tabcontent">
 
             <section class="slider">
                 <div class="slideshow-container">
@@ -181,125 +221,137 @@
 
                     <!-- descrição opcional -->
                     <div class="col trail-list" style="color:var(--text-black); text-indent: 20px;">
-                        <p>O Parque Nacional da Serra dos Órgos <strong>(PARNASO)</strong> é uma unidade de conservação de 19.855 hectares localizada na Região Serrana do Rio de Janeiro (abrangendo Teresópolis, Petrópolis, Magé e Guapimirim).</p>
-                        <br><p>Os aspectos mais relevantes são:</p>                            
+                        <p>O Parque Nacional da Serra dos Órgos <strong>(PARNASO)</strong> é uma unidade de conservação
+                            de 19.855 hectares localizada na Região Serrana do Rio de Janeiro (abrangendo Teresópolis,
+                            Petrópolis, Magé e Guapimirim).</p>
+                        <br>
+                        <p>Os aspectos mais relevantes são:</p>
                         <div style=" text-indent: 50px;">
-                        <p><strong>Importância Histórica:</strong> Criado em 1939, é o terceiro parque nacional mais
-                            antigo do Brasil.</p>
-                        <p><strong>Atrações e Esportes:</strong> É considerado um dos melhores locais do país para
-                            esportes de montanha (escalada, caminhada, rapel) e possui cachoeiras.</p>
-                        <p><strong>Rede de Trilhas:</strong> Possui a maior rede de trilhas do Brasil, com mais de 200
-                            km em todos os níveis de dificuldade, incluindo desde trilhas acessíveis a cadeirantes até a
-                            famosa Travessia Petrópolis-Teresópolis (30 km).</p>
-                        <p><strong>Marcos da Escalada:</strong> Abriga picos icônicos como o Dedo de Deus, considerado o
-                            marco inicial da escalada no país, e a Agulha do Diabo.</p>
-                        <p><strong>Biodiversidade e Conservação:</strong> O parque abrange uma vasta biodiversidade com
-                            mais de 2.800 espécies de plantas, centenas de espécies de animais, incluindo 130 animais
-                            ameaçados de extinção e muitas espécies endêmicas (que só existem ali).</p>
-                        <p><strong>Administração:</strong> É administrado pelo Instituto Chico Mendes de Conservação da
-                            Biodiversidade (ICMBio).</p>
-                    </div>
-                    </p>
-                </div><br>
+                            <p><strong>Importância Histórica:</strong> Criado em 1939, é o terceiro parque nacional mais
+                                antigo do Brasil.</p>
+                            <p><strong>Atrações e Esportes:</strong> É considerado um dos melhores locais do país para
+                                esportes de montanha (escalada, caminhada, rapel) e possui cachoeiras.</p>
+                            <p><strong>Rede de Trilhas:</strong> Possui a maior rede de trilhas do Brasil, com mais de
+                                200
+                                km em todos os níveis de dificuldade, incluindo desde trilhas acessíveis a cadeirantes
+                                até a
+                                famosa Travessia Petrópolis-Teresópolis (30 km).</p>
+                            <p><strong>Marcos da Escalada:</strong> Abriga picos icônicos como o Dedo de Deus,
+                                considerado o
+                                marco inicial da escalada no país, e a Agulha do Diabo.</p>
+                            <p><strong>Biodiversidade e Conservação:</strong> O parque abrange uma vasta biodiversidade
+                                com
+                                mais de 2.800 espécies de plantas, centenas de espécies de animais, incluindo 130
+                                animais
+                                ameaçados de extinção e muitas espécies endêmicas (que só existem ali).</p>
+                            <p><strong>Administração:</strong> É administrado pelo Instituto Chico Mendes de Conservação
+                                da
+                                Biodiversidade (ICMBio).</p>
+                        </div>
+                        </p>
+                    </div><br>
 
-                <div class="horario-trilha" style="color:var(--text-black);">
-                    <p><strong>Horário do Parque:</strong> 07h às 16h</p>
-                    <p id="statusHorario">Carregando horários...</p>
+                    <div class="horario-trilha" style="color:var(--text-black);">
+                        <p><strong>Horário do Parque:</strong> 07h às 16h</p>
+                        <p id="statusHorario">Carregando horários...</p>
+                    </div>
+
+                    <!-- ---------- LISTA DE TRILHAS ---------- -->
+                    <ul class="trail-list" style="color:var(--text-black);">
+                        <li>
+                            <span><strong>Trilha da Pedra do Sino:</strong>
+                                <br>Entrada (07h às 10h), Saída (até 18h30), Pernoite (07h às 22h)</span>
+                            <div class="status-trilha">
+                                <span id="textoTrilha">Carregando status da trilha...</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span><strong>Trilha Cartão Postal</strong></span>
+                            <div class="status-trilha">
+                                <span id="textoTrilha">Carregando status da trilha...</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span><strong>Caminho das Orquídeas</strong></span>
+                            <div class="status-trilha">
+                                <span id="textoTrilha">Carregando status da trilha...</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- ---------- LISTA DE TRILHAS ---------- -->
-                <ul class="trail-list" style="color:var(--text-black);">
-                    <li>
-                        <span><strong>Trilha da Pedra do Sino:</strong>
-                            <br>Entrada (07h às 10h), Saída (até 18h30), Pernoite (07h às 22h)</span>
-                        <div class="status-trilha">
-                            <span id="textoTrilha">Carregando status da trilha...</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span><strong>Trilha Cartão Postal</strong></span>
-                        <div class="status-trilha">
-                            <span id="textoTrilha">Carregando status da trilha...</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span><strong>Caminho das Orquídeas</strong></span>
-                        <div class="status-trilha">
-                            <span id="textoTrilha">Carregando status da trilha...</span>
-                        </div>
-                    </li>               
-                </ul>
-        </div>
 
-
-        <article class="park-card">
-            <div class="park-header">
-                <h3>Parque Estadual dos Três Picos (PETP)</h3>
-            </div>
-            <ul class="trail-list" style="color:var(--text-black);">
-                <li>
-                    <span>Trilha dos Três Picos</span>
-                    <span class="status status-aberta">Aberta</span>
-                </li>
-                <li>
-                    <span>Trilha da Caixa de Fósforos</span>
-                    <span class="status status-aberta">Aberta</span>
-                </li>
-            </ul>
-        </article>
-
-        <article class="park-card">
-            <div class="park-header">
-                <h3>Parque Natural Municipal Montanhas de Teresópolis</h3>
-            </div>
-            <ul class="trail-list" style="color:var(--text-black);">
-                <li>
-                    <span>Trilha da Pedra do Elefante</span>
-                    <span class="status status-aberta">Aberta</span>
-                </li>
-            </ul>
-        </article>
-
-    </section>
-    </div>
-
-    <div id="Guias" class="tabcontent">
-        <div class="guia-container" id="guia-cards-container">
-        </div>
-    </div>
-
-    <div id="Sobre" class="tabcontent">
-        <section>
-            <h2 style="text-align: center;">
-                Terê Verde é administrado por:
-            </h2><br>
-            <h5 style="text-align: center;">
-                <div class="col-sm-30 clearfix" width="100%" height="100%">
-                    <div class="admin-wrapper">
-                        <div class="admin-card phill"></div>
-                        <div class="admin-card rodolpho"></div>
-                        <div class="admin-card pedro"></div>
+                <article class="park-card">
+                    <div class="park-header">
+                        <h3>Parque Estadual dos Três Picos (PETP)</h3>
                     </div>
-                </div>
-            </h5>
-        </section>
-    </div>
+                    <ul class="trail-list" style="color:var(--text-black);">
+                        <li>
+                            <span>Trilha dos Três Picos</span>
+                            <span class="status status-aberta">Aberta</span>
+                        </li>
+                        <li>
+                            <span>Trilha da Caixa de Fósforos</span>
+                            <span class="status status-aberta">Aberta</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="park-card">
+                    <div class="park-header">
+                        <h3>Parque Natural Municipal Montanhas de Teresópolis</h3>
+                    </div>
+                    <ul class="trail-list" style="color:var(--text-black);">
+                        <li>
+                            <span>Trilha da Pedra do Elefante</span>
+                            <span class="status status-aberta">Aberta</span>
+                        </li>
+                    </ul>
+                </article>
+
+            </section>
+        </div>
+
+        <div id="Guias" class="tabcontent">
+            <div class="guia-container" id="guia-cards-container">
+            </div>
+        </div>
+
+        <div id="Sobre" class="tabcontent">
+            <section>
+                <h2 style="text-align: center;">
+                    TerêVerde é administrado por:
+                </h2><br>
+                <h5 style="text-align: center;">
+                    <div class="col-sm-30 clearfix" width="100%" height="100%">
+                        <div class="admin-wrapper">
+                            <div class="admin-card phill"></div>
+                            <div class="admin-card rodolpho"></div>
+                            <div class="admin-card pedro"></div>
+                        </div>
+                    </div>
+                </h5>
+            </section>
+        </div>
     </section>
 
     <footer>
-        <img src="img/identidade_visual/Icone-TereVerde2.svg" alt="Logo Terê Verde" class="logo" width="10%" height="10%">
+        <img src="img/identidade_visual/Icone-TereVerde2.svg" alt="Logo Terê Verde" class="logo" width="10%"
+            height="10%">
         <p>Terê Verde Online © 2025 - Um projeto MVP</p>
     </footer>
 
     <div id="modal-contato" class="modal">
         <form class="modal-content animate" onsubmit="enviarWhatsapp(event)">
-            
+
             <div class="imgcontainer">
-                <span onclick="document.getElementById('modal-contato').style.display='none'" class="close" title="Fechar">&times;</span>
-                <img src="img/identidade_visual/Icone-TereVerde2.svg" alt="Logo Terê Verde" class="avatar" style="width: 30%; height: auto;">
+                <span onclick="document.getElementById('modal-contato').style.display='none'" class="close"
+                    title="Fechar">&times;</span>
+                <img src="img/identidade_visual/Icone-TereVerde2.svg" alt="Logo Terê Verde" class="avatar"
+                    style="width: 30%; height: auto;">
                 <h2 style="color: var(--primary); text-align: center;">Agendar com Guia</h2>
             </div>
-    
+
             <div class="container-form">
                 <div class="row">
                     <div class="col-25">
@@ -309,7 +361,7 @@
                         <input type="text" id="form-nome" name="firstname" placeholder="Digite seu nome.." required>
                     </div>
                 </div>
-    
+
                 <div class="row">
                     <div class="col-25">
                         <label for="parque">Parque de Interesse</label>
@@ -323,16 +375,18 @@
                         </select>
                     </div>
                 </div>
-    
+
                 <div class="row">
                     <div class="col-25">
                         <label for="mensagem">Mensagem</label>
                     </div>
                     <div class="col-75">
-                        <textarea id="form-mensagem" name="subject" placeholder="Gostaria de saber a disponibilidade para..." style="height:150px" required></textarea>
+                        <textarea id="form-mensagem" name="subject"
+                            placeholder="Gostaria de saber a disponibilidade para..." style="height:150px"
+                            required></textarea>
                     </div>
                 </div>
-    
+
                 <div class="row" style="margin-top: 20px;">
                     <input type="submit" value="Enviar via WhatsApp">
                 </div>
