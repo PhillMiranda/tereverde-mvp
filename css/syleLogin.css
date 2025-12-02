@@ -80,7 +80,7 @@ span.psw {
 .modal {
     display: none;     /* Escondido por padrão */
     position: fixed;   /* Permanece no lugar */
-    z-index: 1;        /* Fica no topo */
+    z-index: 9999;        /* Fica no topo */
     left: 0;
     top: 0;
     width: 100%;       /* Largura total */

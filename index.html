@@ -24,10 +24,10 @@
             <p>Descubra trilhas, parques e aventuras em Teresópolis!</p>
         </div>
 
-        <div class="login-fixed-wrapper">
+        <div class="login-fixed-wrapper desktop-only">
             <button class="btn loginbtn" onclick="abrirModalLogin()">Login</button>
             <button class="btn acessobtn" onclick="abrirModalCadastro()">Cadastro</button>
-
+        </div>
             <div id="id_auth" class="modal">
 
                 <div class="modal-content animate">
@@ -104,6 +104,15 @@
                     </div>
                 </div>
             </div>
+        
+
+        <a href="javascript:void(0);" class="hamburger-icon mobile-only" onclick="toggleMenuMobile()">
+            <i class="fa fa-bars"></i>
+        </a>
+        
+        <div id="mobileMenu" class="mobile-menu-content">
+            <a href="#" onclick="abrirModalLogin(); toggleMenuMobile()">Login</a>
+            <a href="#" onclick="abrirModalCadastro(); toggleMenuMobile()">Cadastro</a>
         </div>
 
     </header>

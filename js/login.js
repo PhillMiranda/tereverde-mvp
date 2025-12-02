@@ -39,3 +39,30 @@ window.onclick = function(event) {
         fecharModalAuth();
     }
 }
+
+/* Função para abrir/fechar o menu mobile */
+function toggleMenuMobile() {
+    var menu = document.getElementById("mobileMenu");
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+}
+
+// Fechar o menu se clicar fora dele
+window.onclick = function(event) {
+    if (!event.target.matches('.hamburger-icon') && !event.target.matches('.fa-bars')) {
+        var dropdowns = document.getElementsByClassName("mobile-menu-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === "block") {
+                openDropdown.style.display = "none";
+            }
+        }
+    }
+    // Mantém a lógica do modal de login existente
+    if (event.target == document.getElementById('id_auth')) {
+        document.getElementById('id_auth').style.display = "none";
+    }
+}
