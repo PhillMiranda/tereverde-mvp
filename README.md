@@ -1,6 +1,8 @@
  > Read Me < 
-
-                                                 ### PROPOSTA ###
+[requisitos_tereverde.xlsx](https://github.com/user-attachments/files/24009786/requisitos_tereverde.xlsx)
+[requisitos_tereverde PDF.pdf](https://github.com/user-attachments/files/24009787/requisitos_tereverde.PDF.pdf)
+    
+                                       ### PROPOSTA ###
 
 A geografia do território municipal de Teresópolis é caracterizada por terrenos montanhosos entremeados por vales. 
 A área urbana encontra-se em um planalto a 869 metros acima do nível do mar e é delimitada por três unidades de conservação: 
