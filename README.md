@@ -14,7 +14,7 @@ A proposta do Circuito Terê Verde busca promover essas atrações,  destacando 
 A plataforma “Terê Verde Online” permitirá que os visitantes tenham acesso a informações atualizadas sobre a biodiversidade, trilhas, cachoeiras e eventos que ocorrem nesses espaços protegidos.
 Com uma interface amigável e recursos interativos, o site se tornará uma ferramenta essencial para turistas que desejam explorar as belezas naturais de Teresópolis de forma consciente e atualizada. </p>
 
-## NOME DO PROJETO: TERÊ VERDE
+## NOME DO PROJETO: TERÊ VERDE 
 
 <ul> <h3> PARTICIPANTES DO PROJETO: </ul> </h3> 
  <li>Pedro Ventura (06013296) 
