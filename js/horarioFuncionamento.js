@@ -51,7 +51,15 @@ const dadosParques = [
       titulo: "Parque Estadual dos Três Picos (PETP)",
       horario: { inicio: "08:00", fim: "17:00" },
       descricao: "<p>O maior parque estadual do Rio de Janeiro, com diversas formações rochosas impressionantes.</p>", 
-      temSlider: false,
+      temSlider: true,
+      imagens: [
+        "img/parques/parque_tres_picos/3PICOS_1.jpg",
+        "img/parques/parque_tres_picos/3PICOS_2.jpg",
+        "img/parques/parque_tres_picos/3PICOS_3.jpg",
+        "img/parques/parque_tres_picos/3PICOS_4.jpg",
+        "img/parques/parque_tres_picos/3PICOS_5.jpg",
+        "img/parques/parque_tres_picos/3PICOS_6.jpg"
+      ],
       trilhas: [
           {
               nome: "Trilha da Caixa de Fósforo",
@@ -80,7 +88,12 @@ const dadosParques = [
       titulo: "Parque Natural Municipal Montanhas de Teresópolis",
       horario: { inicio: "08:00", fim: "17:00" },
       descricao: "<p>Unidade de conservação municipal que abriga a famosa Pedra da Tartaruga.</p>",
-      temSlider: false,
+      temSlider: true,
+      imagens: [
+          "img/parques/parque_montanhas/MONTANHAS (1).png",
+          "img/parques/parque_montanhas/MONTANHAS (2).png",
+          "img/parques/parque_montanhas/MONTANHAS (3).png"
+      ],
       trilhas: [
           {
               nome: "Trilha Pedra Alpina",
