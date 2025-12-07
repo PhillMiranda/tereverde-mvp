@@ -18,9 +18,9 @@ Com uma interface amigável e recursos interativos, o site se tornará uma ferra
 
 <ul> <h3> PARTICIPANTES DO PROJETO: </ul> </h3> 
  <li>Pedro Ventura (06013296) 
- <li>Phillip Miranda ( )
+ <li>Phillip Miranda (06015227)
  <li> Rodolpho Marcário (06015421)
- <li> Gustavo Toledo( )
+ <li> Gustavo Toledo(06004529)
 
  <ul> <h3>Ferramentas: </h3> 
 <li> HTML 
