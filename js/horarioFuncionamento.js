@@ -52,6 +52,7 @@ const dadosParques = [
       horario: { inicio: "08:00", fim: "17:00" },
       descricao: "<p>O maior parque estadual do Rio de Janeiro, com diversas formações rochosas impressionantes.</p>", 
       temSlider: false,
+      //
       trilhas: [
           {
               nome: "Trilha da Caixa de Fósforo",

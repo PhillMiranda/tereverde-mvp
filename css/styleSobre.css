@@ -1,106 +1,113 @@
-/* ============================================
-   SEÇÃO SOBRE — layout profissional
-   ============================================ */
-
-/* Container principal da seção */
-.sobre-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 3rem 1rem;
-    text-align: center;
-}
-
-/* Título */
-.sobre-container h2 {
-    color: var(--text-black);
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-/* Grid dos administradores */
-.admin-wrapper {
+/* Container Principal */
+.equipe-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1400px;     
+    margin: 0 auto;
+    align-items: stretch;
 }
 
-/* Card da imagem */
-.admin-card {
-    width: 220px;
-    height: 220px;
-    border-radius: 25px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: filter 0.35s ease, transform 0.35s ease;
+/* O Card Individual - Cópia visual do .cardguia */
+.sobre-card {
+    background-color: #ffffff;
+    width: 300px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    border-radius: 0; 
+    margin: 0;
+    font-family: arial;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito Hover leve (opcional, para dar interatividade) */
+.sobre-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Área da Foto - Cópia da proporção .img-container-guia */
+.sobre-img-box {
+    width: 100%;
+    aspect-ratio: 1824 / 1212; /* A proporção mágica dos guias */
+    overflow: hidden;
+    background-color: #ddd;
+    position: relative;
+}
+
+/* A Foto em si */
+.sobre-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
     cursor: pointer;
+    transition: transform 0.5s ease;
 }
 
-/* Hover padrão */
-.admin-card:hover {
-    filter: brightness(115%);
-    transform: scale(1.03);
+.sobre-img:hover {
+    transform: scale(1.05); /* Um zoom sutil */
 }
 
-/* ============================================
-   Imagens principais
-   ============================================ */
-.admin-card.phill {
-    background-image: url("../img/quem_somos/phill.png");
+/* Área de Texto */
+.sobre-info {
+    padding: 0 10px 20px 10px; /* Padding similar ao .card-content */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
 }
 
-.admin-card.rodolpho {
-    background-image: url("../img/quem_somos/rodolpho.png");
+/* Tipografia - Ajustada para bater com os Guias */
+.sobre-nome {
+    font-size: 1.5em; /* Tamanho próximo ao h1 dos guias */
+    color: #000;      /* Cor padrão */
+    margin: 15px 0 10px 0;
+    font-weight: bold;
 }
 
-.admin-card.pedro {
-    background-image: url("../img/quem_somos/pedro.png");
+.sobre-cargo {
+    color: var(--primary-hover); /* A mesma cor verde dos guias (.tipoguia) */
+    font-size: 18px;             /* Mesmo tamanho da .tipoguia */
+    margin-bottom: 15px;
 }
 
-/* ============================================
-   Imagens ao passar o mouse (HOVER)
-   ============================================ */
-.admin-card.phill:hover {
-    background-image: url("../img/quem_somos/phill-hover.png");
+/* Área de Contato */
+.sobre-contato {
+    margin-top: auto;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
 }
 
-.admin-card.rodolpho:hover {
-    background-image: url("../img/quem_somos/rodolpho-hover.png");
+.sobre-contato p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.admin-card.pedro:hover {
-    background-image: url("../img/quem_somos/pedro-hover.png");
+.sobre-contato i {
+    color: var(--button-1); /* Ícones na cor do tema */
+    font-size: 1.1rem;
 }
 
-/* ============================================
-   Responsividade
-   ============================================ */
-
-@media (max-width: 768px) {
-    .admin-card {
-        width: 180px;
-        height: 180px;
+/* Responsividade Mobile */
+@media screen and (max-width: 600px) {
+    .equipe-container {
+        padding: 10px 0;
+        gap: 15px;
     }
 
-    .sobre-container h2 {
-        font-size: 1.7rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .admin-card {
-        width: 150px;
-        height: 150px;
-    }
-
-    .sobre-container {
-        padding: 2rem 1rem;
-    }
-
-    .sobre-container h2 {
-        font-size: 1.4rem;
+    .sobre-card {
+        width: 90vw;
+        max-width: 300px;
     }
 }
