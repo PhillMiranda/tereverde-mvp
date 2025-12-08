@@ -28,8 +28,8 @@ const dadosEquipe = [
     },
     {
         nome: "Rodolpho Macario",
-        cargo: "Colaborador",
-        especialista: "Redes Sociais",
+        cargo: "QA",
+        especialista: "Testes Automatizados",
         foto: "img/quem_somos/rodolpho.png",
         contato: "rodolpho@gmail.com",
         telefone: "21 99238-1692"
