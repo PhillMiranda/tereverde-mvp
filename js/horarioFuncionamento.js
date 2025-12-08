@@ -51,20 +51,15 @@ const dadosParques = [
       titulo: "Parque Estadual dos Três Picos (PETP)",
       horario: { inicio: "08:00", fim: "17:00" },
       descricao: "<p>O maior parque estadual do Rio de Janeiro, com diversas formações rochosas impressionantes.</p>", 
-<<<<<<< HEAD
-      temSlider: false,
-      //
-=======
-      temSlider: true,
-      imagens: [
-        "img/parques/parque_tres_picos/3PICOS_1.jpg",
-        "img/parques/parque_tres_picos/3PICOS_2.jpg",
-        "img/parques/parque_tres_picos/3PICOS_3.jpg",
-        "img/parques/parque_tres_picos/3PICOS_4.jpg",
-        "img/parques/parque_tres_picos/3PICOS_5.jpg",
-        "img/parques/parque_tres_picos/3PICOS_6.jpg"
-      ],
->>>>>>> 27bb66953bdc7f21a3207daf24f26d1f00d89056
+  temSlider: true,
+  imagens: [
+    "img/parques/parque_tres_picos/3PICOS_1.jpg",
+    "img/parques/parque_tres_picos/3PICOS_2.jpg",
+    "img/parques/parque_tres_picos/3PICOS_3.jpg",
+    "img/parques/parque_tres_picos/3PICOS_4.jpg",
+    "img/parques/parque_tres_picos/3PICOS_5.jpg",
+    "img/parques/parque_tres_picos/3PICOS_6.jpg"
+  ],
       trilhas: [
           {
               nome: "Trilha da Caixa de Fósforo",
@@ -236,7 +231,6 @@ window.atualizarStatusTrilhas = function() {
               let cor = "#c0392b";
               let corLetra = "#fff";
 
-              // --- AQUI ESTÁ A MÁGICA ---
               // Verifica a variável global vinda do previsaoTempo.js
               if (window.trilhaStatus === "fechada") {
                   mensagem = "Fechada (Chuva)";

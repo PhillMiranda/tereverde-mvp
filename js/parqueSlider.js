@@ -1,16 +1,8 @@
-/* -------------------------------------------------
-   parqueSlider.js – (Refatorado para uso dinâmico)
-   ------------------------------------------------- */
-
    (() => {
     // Guarda o índice atual de cada parque (chave = data-park)
     const parkIndices = {};
     const parkTimers  = {};
 
-    // -------------------------------------------------
-    // 1. Tornamos essa função GLOBAL (window)
-    // para poder chamá-la do outro arquivo
-    // -------------------------------------------------
     window.initAllParkSliders = (autoInterval = 5000) => {
         // Seleciona todos os sliders presentes na tela no momento
         const parkContainers = document.querySelectorAll('.park-slider');
@@ -95,7 +87,4 @@
         clearInterval(parkTimers[parkId]);
         startAutoSlide(parkId, 5000);
     };
-
-    // Não precisamos mais do DOMContentLoaded aqui, 
-    // pois o HTML é gerado dinamicamente depois.
 })();
