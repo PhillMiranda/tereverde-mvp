@@ -66,3 +66,41 @@ window.onclick = function(event) {
         document.getElementById('id_auth').style.display = "none";
     }
 }
+
+function enviarDadosGuia() {
+    // 1. Pega os valores que o usuário digitou
+    const nome = document.getElementById("guia-nome").value;
+    const email = document.getElementById("guia-email").value;
+    const telefone = document.getElementById("guia-telefone").value;
+    const senha = document.getElementById("guia-senha").value;
+
+    // 2. Validação simples (impede envio se faltar dados)
+    if (nome === "" || email === "" || telefone === "") {
+        alert("Por favor, preencha Nome, E-mail e Telefone para continuarmos.");
+        return;
+    }
+
+    // 3. Monta o corpo da mensagem do e-mail
+    // O %0D%0A é o código para pular linha em links de e-mail
+    const assunto = "Solicitação de Novo Guia - " + nome;
+    
+    const mensagem = `Olá, gostaria de me cadastrar como guia no TerêVerde.%0D%0A%0D%0A` +
+        `--- MEUS DADOS ---%0D%0A` +
+        `Nome: ${nome}%0D%0A` +
+        `E-mail: ${email}%0D%0A` +
+        `WhatsApp: ${telefone}%0D%0A` +
+        `Senha: ${senha || "Não informado"}%0D%0A%0D%0A` +
+        `Aguardo o retorno para finalizar meu cadastro.`;
+
+    // 4. Seu e-mail de destino
+    const emailDestino = "phillipmiranda@outlook.com"; // <--- COLOQUE SEU E-MAIL AQUI
+
+    // 5. Abre o cliente de e-mail
+    window.location.href = `mailto:${emailDestino}?subject=${assunto}&body=${mensagem}`;
+
+    // 6. Feedback para o usuário (Aviso visual)
+    alert("Pronto Guia! Recebemos sua solicitação e em breve entraremos em contato pelo WhatsApp!");
+    
+    // Opcional: Limpar os campos e fechar o modal
+    fecharModalAuth();
+}

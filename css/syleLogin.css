@@ -168,6 +168,27 @@ span.psw {
     animation: animatezoom 0.6s
 }
 
+/* Ajuste dos inputs na tela de guia */
+.area-exclusiva-guia .input-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.area-exclusiva-guia input {
+    width: 100% !important; /* Força ocupar a largura toda */
+    margin: 5px 0;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.area-exclusiva-guia input:focus {
+    background-color: #fff;
+    border-color: var(--primary);
+    outline: none;
+}
+
 @-webkit-keyframes animatezoom {
     from {
         -webkit-transform: scale(0)

@@ -70,35 +70,43 @@
 
                         <div class="form-section cadastro-section">
                             <span onclick="fecharModalAuth()" class="close" title="Fechar">&times;</span>
-                            <form action="/cadastro_action.php" method="post">
+                            
+                            <div class="form-wrapper"> 
                                 <div style="text-align:center; margin-bottom:15px;">
                                     <img src="img/identidade_visual/Icone-TereVerde2.svg" alt="Avatar" class="avatar">
                                     <h2>Fala guia, crie sua conta!</h2>
+                                    <p>O cadastro no <strong>TerêVerde</strong> é restrito a guias profissionais credenciados.</p>
                                 </div>
-
+                        
+                                <label for="nome"><b>Nome</b></label>
+                                <input id="guia-nome" type="text" placeholder="Seu nome completo" name="nome" required>
+                                <br>
+                                
                                 <label for="email"><b>Email</b></label>
-                                <input type="text" placeholder="Seu melhor email" name="email" required>
+                                <input id="guia-email" type="text" placeholder="Seu melhor email" name="email" required>
                                 <br>
+                                
                                 <label for="tel"><b>Telefone </b></label>
-                                <input type="tel" placeholder="(XX) 9 9999-9999" name="tel" required>
+                                <input id="guia-telefone" type="tel" placeholder="(XX) 9 9999-9999" name="tel" required>
                                 <br>
+                                
                                 <label for="psw-new"><b>Senha </b></label>
-                                <input type="password" placeholder="Crie uma senha" name="psw-new" required>
+                                <input id="guia-senha" type="password" placeholder="Crie uma senha" name="psw-new" required>
                                 <br>
+                                
                                 <label for="psw-repeat"><b>Confirme</b></label>
-                                <input type="password" placeholder="Repita a senha" name="psw-repeat" required>
+                                <input type="password" placeholder="Repita a senha" name="psw-repeat">
                                 <br>
-                                <button type="submit" class="btn loginbtn"
-                                    style="background-color: var(--button-1);">Cadastrar</button>
-                                <button type="button" onclick="document.getElementById('id_auth').style.display='none'"
-                                    class="btn cancelbtn">Cancel</button>
-
-                                <div
-                                    style="margin-top: 20px; text-align: center; border-top: 1px solid #eee; padding-top: 15px;">
-                                    <p>Já possui conta? <a onclick="animarParaLogin()" class="toggle-link">Faça
-                                            Login</a></p>
+                                
+                                <button type="button" class="btn loginbtn btn-solicitar-guia" onclick="enviarDadosGuia()"
+                                    style="background-color: var(--button-1);">Enviar Solicitação</button>
+                                    
+                                <button type="button" onclick="fecharModalAuth()" class="btn cancelbtn">Cancel</button>
+                        
+                                <div style="margin-top: 20px; text-align: center; border-top: 1px solid #eee; padding-top: 15px;">
+                                    <p>Já possui conta? <a onclick="animarParaLogin()" class="toggle-link">Faça Login</a></p>
                                 </div>
-                            </form>
+                            </div> 
                         </div>
 
                     </div>
