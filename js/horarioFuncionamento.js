@@ -3,7 +3,8 @@ const dadosParques = [
   {
       id: "parnaso",
       titulo: "Parque Nacional da Serra dos Órgãos (PARNASO)",
-      horario: { inicio: "07:00", fim: "16:00" },
+      telefone: "(21) 97896-2463",
+      horario: { inicio: "07:00", fim: "22:00" },
       descricao: `
           <p>O Parque Nacional da Serra dos Órgãos <strong>(PARNASO)</strong> é uma unidade de conservação
           de 19.855 hectares localizada na Região Serrana do Rio de Janeiro.</p>
@@ -42,15 +43,29 @@ const dadosParques = [
           {
               nome: "Caminho das Orquídeas",
               dificuldade: "Baixa",
-              regraHorarios: [{ nome: "Em manutenção", inicio: "00:00", fim: "23:59", cor: "#e67e22", corLetra: "#fff" }]
+              regraHorarios: [{ nome: "Em manutenção", inicio: "07:00", fim: "16:59", cor: "#e67e22", corLetra: "#fff" }]
+          },
+          {
+              nome: "Trilha suspensa",
+              dificuldade: "Baixa",
+              regraHorarios: [{ nome: "Em manutenção", inicio: "07:00", fim: "23:59", cor: "#e67e22", corLetra: "#fff" }]
           }
       ]
   },
   {
       id: "tres_picos",
       titulo: "Parque Estadual dos Três Picos (PETP)",
+      telefone: "(21) 99624-4839",
       horario: { inicio: "08:00", fim: "17:00" },
-      descricao: "<p>O maior parque estadual do Rio de Janeiro, com diversas formações rochosas impressionantes.</p>", 
+      descricao: `<p>O maior parque estadual do Rio de Janeiro, com diversas formações rochosas impressionantes.</p>
+      <p>É um destino popular para atividades ao ar livre, como caminhadas, escaladas e observação da natureza.</p>
+      <br><p>Algumas das atrações mais notáveis do parque incluem:</p>
+      <div style="text-indent: 20px;">
+          <p><strong>Pico dos Três Picos:</strong> A montanha mais alta do parque, oferecendo vistas panorâmicas deslumbrantes.</p>
+          <p><strong>Trilha da Caixa de Fósforo:</strong> Uma trilha popular que leva os visitantes através de paisagens naturais deslumbrantes.</p>
+          <p><strong>Formações Rochosas:</strong> Incluindo o famoso Dedo de Deus, uma formação rochosa icônica para escaladores.</p>
+      </div>
+      `, 
   temSlider: true,
   imagens: [
     "img/parques/parque_tres_picos/3PICOS_1.jpg",
@@ -86,8 +101,17 @@ const dadosParques = [
   {
       id: "montanhas",
       titulo: "Parque Natural Municipal Montanhas de Teresópolis",
+      telefone: "(21) 2742-3352",
       horario: { inicio: "08:00", fim: "17:00" },
-      descricao: "<p>Unidade de conservação municipal que abriga a famosa Pedra da Tartaruga.</p>",
+      descricao: `<p>O parque é conhecido por sua rica biodiversidade, abrigando uma variedade de espécies de flora e fauna, muitas das quais são endêmicas da Mata Atlântica.</p>
+      <p>Além disso, o parque oferece diversas trilhas para caminhadas, proporcionando aos visitantes a oportunidade de explorar suas paisagens deslumbrantes e apreciar a natureza em seu estado mais puro.</p>
+      <p>Uma das atrações mais icônicas do parque é a <strong>Pedra da Tartaruga</strong>, uma formação rochosa que se assemelha a uma tartaruga gigante, oferecendo vistas panorâmicas espetaculares da região.</p>
+      <br><p>Com sua combinação de beleza natural, biodiversidade e importância ecológica, o Parque Natural Municipal Montanhas de Teresópolis é um destino imperdível para:</p>
+      <div style="text-indent: 20px;">
+        <p><strong>Amantes da natureza</strong> que buscam um refúgio tranquilo em meio às montanhas.</p>
+        <p>É um local ideal para <strong>atividades ao ar livre, como caminhadas, observação de aves e fotografia da natureza.</strong></p>
+      </div>
+      `,
       temSlider: true,
       imagens: [
           "img/parques/parque_montanhas/MONTANHAS (1).png",
@@ -113,7 +137,7 @@ const dadosParques = [
           {
               nome: "Trilha Pedra da Tartaruga",
               dificuldade: "Baixa",
-              regraHorarios: [{ nome: "Aberta para visitação", inicio: "08:00", fim: "17:00", cor: "#27ae60", corLetra: "#fff" }]
+              regraHorarios: [{ nome: "Aberta para visitação", inicio: "05:00", fim: "17:00", cor: "#27ae60", corLetra: "#fff" }]
           }
       ]
   }
@@ -192,6 +216,7 @@ function renderizarParques() {
                   <h3>${parque.titulo} <span style="float:right; font-size:0.8em;">&#9660;</span></h3>
               </div>
               ${htmlSlider}
+              ${parque.telefone ? `<div class="col trail-list" style="color:var(--text-black);"><p><strong>Contato:</strong> ${parque.telefone}</p></div>` : ""}
               ${htmlDescricao}
               <div class="horario-trilha" style="color:var(--text-black);">
                   <p><strong>Horário do Parque:</strong> ${parque.horario.inicio} às ${parque.horario.fim}</p>
