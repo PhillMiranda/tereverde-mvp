@@ -256,6 +256,27 @@ section.slider {
     display: block;
 }
 
+.banner-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 1.1em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-align: left;
+}
+
+/* Exibe no hover */
+.banner-slide:hover .banner-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Botões de navegação */
 .prev,
 .next {
