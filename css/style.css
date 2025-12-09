@@ -261,7 +261,7 @@ section.slider {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 73%;
+    top: 80%;
     padding: 16px;
     color: white;
     font-size: 18px;
