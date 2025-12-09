@@ -1,7 +1,3 @@
-<h1> > Read Me < </h1> <br>
-DONWLOAD XLS: (https://github.com/user-attachments/files/24043286/requisitos_tereverde.xlsx) <br>
-DOWNLOAD PDF: (https://github.com/user-attachments/files/24042806/requisitos_tereverde.PDF.pdf)
-
 
 <H1>                             PROPOSTA                    </H1>
 
