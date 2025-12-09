@@ -1,0 +1,128 @@
+/* Container Principal */
+.eventos-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.eventos-wrapper h2 {
+    color: var(--primary); /* Verde escuro */
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.eventos-wrapper > p {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Grid dos Cards */
+.eventos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* O Card de Evento */
+.evento-card {
+    background-color: #fff;
+    width: 250px; /* Mesma largura dos Guias */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Texto alinhado à esquerda fica melhor para leitura */
+}
+
+.evento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Área da Imagem */
+.evento-img-box {
+    position: relative;
+    height: 180px;
+    width: 100%;
+}
+
+.evento-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Etiqueta de Data (Destaque) */
+.evento-data-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--primary-hover); /* Verde claro */
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Informações do Evento */
+.evento-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.evento-info h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-black);
+    font-size: 1.2rem;
+}
+
+.evento-local {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.evento-desc {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Empurra o botão para o final */
+}
+
+/* Botão do Card */
+.btn-evento {
+    text-align: center;
+    background-color: var(--button-1);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: block;
+}
+
+.btn-evento:hover {
+    background-color: var(--primary-hover);
+    color: #fff;
+}
+
+/* Responsividade Mobile */
+@media screen and (max-width: 600px) {
+    .evento-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}

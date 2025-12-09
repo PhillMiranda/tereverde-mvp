@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/syleLogin.css">
     <link rel="stylesheet" href="css/styleGuia.css">
     <link rel="stylesheet" href="css/styleSobre.css">
+    <link rel="stylesheet" href="css/styleEventos.css">
 
 </head>
 
@@ -143,11 +144,11 @@
     </section>
 
     <section>
-        <button class="tablink" onclick="openPage('PaginaInicial', this, '#293B14')" id="defaultOpen">Página
-            inicial</button>
+        <button class="tablink" onclick="openPage('PaginaInicial', this, '#293B14')" id="defaultOpen">Página inicial</button>
         <button class="tablink" onclick="openPage('Parques', this, '#344D0E')">Parques</button>
-        <button class="tablink" onclick="openPage('Guias', this, '#4d7019')">Guias</button>
-        <button class="tablink" onclick="openPage('Sobre', this, '#76993D')">Sobre</button>
+        <button class="tablink" onclick="openPage('Eventos', this, 'var(--primary)')">Eventos</button>
+        <button class="tablink" onclick="openPage('Guias', this, '#4d7019')">Guias</button>        
+        <button class="tablink" onclick="openPage('Sobre', this, '#76993D')">Sobre</button>        
 
         <div id="PaginaInicial" class="tabcontent">
 
@@ -212,6 +213,15 @@
 
         <div id="Guias" class="tabcontent">
             <div class="guia-container" id="guia-cards-container">
+            </div>
+        </div>
+
+        <div id="Eventos" class="tabcontent">
+            <div class="eventos-wrapper">
+                <h2>Calendário de Eventos</h2>
+                <p>Festivais, feiras e o que há de melhor rolando em Teresópolis.</p>
+                
+                <div id="eventos-container" class="eventos-container"></div>
             </div>
         </div>
 
@@ -296,6 +306,7 @@
     <script src="js/guiaCards.js"></script>
     <script src="js/carouselGuias.js"></script>
     <script src="js/sobreCards.js"></script>
+    <script src="js/eventosCards.js"></script>
 </body>
 
 </html>
